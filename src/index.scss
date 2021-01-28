@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@import '~@ndla/core/scss/core';
+@import '~@ndla/icons/scss/icons';
+@import '~ndla-ui/src/main';
+@import '~@ndla/tabs/scss/tabs';
+@import '~@ndla/core/scss/utilities';
