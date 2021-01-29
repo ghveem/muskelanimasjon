@@ -23,12 +23,13 @@ color: #20588F;
 margin: 0;
 `
 
-function MuscleSelector(activeMuscleInfo) {
+function MuscleSelector({activeMuscle}) {
+     console.log('SELECTOR', activeMuscle)
   return (
    <MuscleSelectorWrapper>
-       <Description label="Skulder">Overkropp</Description>
+       <Description label={activeMuscle.muscleGroup}>Overkropp</Description>
        <Header value="muskelnavn_1">
-            Muskelnavn 1 (Latin Navn)
+            {activeMuscle.name}
        </Header>
        <Header value="muskelnavn_2">
             Muskelnavn 2 (Latin Navn)

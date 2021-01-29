@@ -5,12 +5,15 @@ const MuscleGroupsInfo = [{
     info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
-      iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
+      id: 1,
+      iframeSrc:"'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'"
     },{
       name: 'Squat #2',
+      id: 2,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 3,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -20,12 +23,15 @@ const MuscleGroupsInfo = [{
     info: 'gasdgadgadgadgadgadg, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 4,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Squat #2',
+      id: 5,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 6,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -35,12 +41,15 @@ const MuscleGroupsInfo = [{
     info: 'aaaaaaaaaaaaaaaaaaaa sit amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 7,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Press #2',
+      id: 8,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 9,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -50,12 +59,15 @@ const MuscleGroupsInfo = [{
     info: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbit amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 10,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Løft #2',
+      id: 11,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 12,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -65,12 +77,15 @@ const MuscleGroupsInfo = [{
     info: 'ccccccccccccccccccccccccccct amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 13,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Hit #2',
+      id: 14,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 15,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -80,12 +95,15 @@ const MuscleGroupsInfo = [{
     info: 'Ddddddddddddddddddddddddddddit amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 16,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Tabitha #2',
+      id: 17,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 8,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   },{
@@ -95,12 +113,15 @@ const MuscleGroupsInfo = [{
     info: 'Eeeeeeeeeeeeeeeeeeeeeesit amet, consectetur adipiscing elit. Nullam ut viverra metus, ullamcorper dignissim sem. Cras pellentesque velit ac efficitur bibendum.',
     excersises: [{
       name: 'Ettbeins knebøy #1',
+      id: 19,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Jalla #2',
+      id: 20,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     },{
       name: 'Utfall #3',
+      id: 21,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6226539055001'
     }]
   }]
