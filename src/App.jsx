@@ -1,35 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled'
 import MuscleSelector from './MuscleSelector';
 import MuscleInfo from './MuscleInfo';
 import Exercises from './Exercises';
 import ButtonGroup from './ButtonGroup';
-import MuscleGroupsInfo from './MuscleGroupsInfo';
-import { ReactComponent as SvgFront } from './svg/MuscleGroupsFront.svg';
-import { ReactComponent as SvgBack } from './svg/MuscleGroupsBack.svg';
-
+import {getAllMuscleGroups, getMuscleGroup, getMuscleGroupByName} from './MuscleGroupsInfo';
+import {ReactComponent as MusclePerson} from './svg/Muskelperson.svg';
 
 const MuscleGroupsWrapper = styled.article`
 display: flex;
-padding-top: 10rem;
-padding-left:9.2rem;
-flex: 1;
 flex-direction: column;
-padding-right:17rem;
+flex: 1;
+height: auto;
+margin: 1rem;
 `
 const Header = styled.h1`
 display: flex;
 width: 100%auto;
 justify-content: flex-start;
 flex: 1;
-`
-
-const ButtonWrapper = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-flex: 1;
-justify-content: flex-end;
 `
 const ContentWrapper = styled.div`
 display:flex;
@@ -38,44 +27,71 @@ flex:1;
 `
 const InteractiveSvgWrapper = styled.div`
 display: flex;
-width: 22rem;
-height:20.25rem;
+flex: 1;
 margin-right: 1.4rem;
+height: 29rem;
+width: 19rem;
 `
 
 const InformationWrapper = styled.div`
 display:flex;
 flex-direction: column;
-width: 21.1rem;
+width: 23.1rem;
 height: 13.9rem;
 `
-const StyledSvgFront = styled(SvgFront)`
-margin-right: 1rem;
+const StyledMuscleperson = styled(MusclePerson)`
+height: auto;
+width: auto;
+&>g>g{
+  color: #20588F;
+  &:hover{
+  cursor: pointer;
+  color: black;
+  }
+}
+&>g>#${props => props.active}{
+  color: red;
+}
 `
-function App() {
-  const [activeMuscleIndex, setActiveMuscle] = useState(1);
-  const activeMuscle = 
-    MuscleGroupsInfo.find(muscleGroup => muscleGroup.id === activeMuscleIndex
-     
-    );
+const App = () => {
+  const [activeMuscleId, setActiveMuscleId] = useState(1);
+  const [showExercises, setShowExercises] = useState(false);
+  const [activeGroup, setActiveGroup] = useState('triceps')
+
+  const allMuscleGroups = getAllMuscleGroups();
+  const activeMuscle = getMuscleGroup(activeMuscleId);
+
+  useEffect(() => {
+    setShowExercises(null)
+    getMuscleGroup(activeMuscleId)
+    setActiveGroup(activeMuscle.name)
+  }, [activeMuscleId, activeMuscle])
+
+  const handleSvgOnClick = (e) => {
+   const activeMuscleGroup = getMuscleGroupByName(e.target.parentElement.id)
+    if(activeMuscleGroup){
+      setActiveMuscleId(activeMuscleGroup.id)
+      setActiveGroup(activeMuscleGroup.name)
+    }
+  }
+
     return (
       <MuscleGroupsWrapper>
         <Header>Øvelser for forskjellige muskelgrupper</Header>
         <ContentWrapper>
           <InteractiveSvgWrapper>
-          <StyledSvgFront />
-          <SvgBack />
+            <StyledMuscleperson onClick={handleSvgOnClick} active={activeGroup} />
           </InteractiveSvgWrapper>
           <InformationWrapper>
-            <ButtonWrapper  >
-              <ButtonGroup index={activeMuscleIndex} setActiveMuscle={(newActiveMuscleIndex) => setActiveMuscle(newActiveMuscleIndex)} length={MuscleGroupsInfo.length}  />
-            </ButtonWrapper>
-            <MuscleSelector activeMuscle={activeMuscle} />
-            <MuscleInfo info={activeMuscle.info} />
+              <ButtonGroup index={activeMuscle.id} setActiveMuscle={(newActiveMuscle) => setActiveMuscleId(newActiveMuscle)} length={allMuscleGroups.length}  />
+            <MuscleSelector activeMuscle={activeMuscle} allMuscleGroups={allMuscleGroups} />
+            <MuscleInfo info={activeMuscle.info} setShowExercises={(bool) => setShowExercises(bool)} />
           </InformationWrapper>
         </ContentWrapper>
+        {showExercises && (
           <Exercises excercises={activeMuscle.excersises} />
-        </MuscleGroupsWrapper>
+        )}
+      </MuscleGroupsWrapper>
     );
   };
 

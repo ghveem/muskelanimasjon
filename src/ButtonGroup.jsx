@@ -22,31 +22,34 @@ padding: 0px 18px;
   color: #20588F;
   background-color: white;
 }
+&:focus{
+  outline: none;
+  box-shadow: 0 0 2px #2222cc;
+}
+`
+const ButtonWrapper = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+flex: 1;
+justify-content: flex-end;
+&:fullscreen{
+  display: none;
+}
 `
 const Text = styled.p`
-margin: 0;
-font-weight: bold;
-color: #757575;
+  margin: 0;
+  font-weight: bold;
+  color: #757575;
 `
 
-function ButtonGroup({index, setActiveMuscle, length}) {
-  const handleDecrementButton = () => {
-    if(index > 1){
-      setActiveMuscle(index -1)
-    }
-  }
-  const handleIncrementButton = () => {
-    if(index < length){
-      setActiveMuscle(index +1)
-    }
-  }
+const ButtonGroup = ({index, setActiveMuscle, length}) => {
   return (
-    <>
+      <ButtonWrapper>
         <Text>{index}/{length}</Text>
-        <Button onClick={handleDecrementButton} disabled={index === 1} >Forrige muskel</Button>
-        <Button onClick={handleIncrementButton} disabled={index === length} >Neste muskel</Button>
-          
-      </>
+        <Button onClick={() => index >= 1 ? setActiveMuscle(index - 1) : null} disabled={index === 1}>Forrige muskel</Button>
+        <Button onClick={() => index <= length - 1 ? setActiveMuscle(index + 1) : null} disabled={index === length}>Neste muskel</Button>
+      </ButtonWrapper>
   );
 }
 

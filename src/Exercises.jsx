@@ -6,12 +6,10 @@ margin-top: 2.5rem;
 margin-left: 0.5rem;
 margin-right: 1.5rem;
 margin-bottom: 0rem;
-display: flex;
-flex-direction: row;
 border-bottom: ${props =>
 props.active ? '4px solid #20588F' : 'none'};
 color: ${props =>
-props.active ? '4px solid #20588F' : 'none'};
+props.active ? '4px solid white' : 'none'};
 &:hover {
     border-bottom: 4px solid #20588F;
     color:  #20588F;
@@ -22,6 +20,7 @@ const ExerciseTitleWrapper = styled.div`
 display: flex;
 flex-direction: row;
 border-bottom: 1px solid #dbdbdb;
+width: auto;
 `
 const IframeWrapper = styled.div`
 position: relative;
@@ -38,34 +37,39 @@ height: 100%;
 border: 0;
 `
 
+const Exercises = ({ excercises }) => {
+    console.log("Excersises");
+    const [activeExcercise, setActiveExcercise] = useState(0);
+    const [video, setVideo] = useState(null);
 
-function Exercises({excercises}) {
-    const [activeExcercise, setActiveExcercise] = useState(null)
+    useEffect(() => {
+        console.log("useEffect", activeExcercise);
+        if (activeExcercise !== null) {
+            const activeVideo = excercises[activeExcercise];
+            setVideo(activeVideo);
+        } else {
+            console.log("activeExcersise er null");
+        }
+    }, [activeExcercise, excercises])
 
-    // useEffect(() => {
-    //     setActiveExcercise(null)
-    // }, [excercises])
-
-    const video = excercises.find((excercise) => excercise.id === activeExcercise)
-    console.log('videoSrc', video)
-    console.log('activeExcercise', activeExcercise)
+    console.log('activeExcercise', activeExcercise);
+    console.log("video", video);
 
   return (
       <>
         <ExerciseTitleWrapper>
             {excercises.map((excercise, key) => {
-                console.log('excercise', excercise.id)
                 return(
                     <Text 
                         key={key} 
-                        active={activeExcercise === excercise.id} 
-                        onClick={() => setActiveExcercise(excercise.id)}>
+                        active={activeExcercise === key} 
+                        onClick={() => setActiveExcercise(key)}>
                         {excercise.name}
                     </Text>
                 )
             })}
         </ExerciseTitleWrapper>
-        {activeExcercise && video && (
+        {activeExcercise !== null && video && (
             <IframeWrapper>
                 <Iframe title={video.name} src={video.iframeSrc} allowfullscreen frameborder={0} />
             </IframeWrapper>

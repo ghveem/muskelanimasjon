@@ -2,16 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled'
 
 const MuscleSelectorWrapper = styled.select`
-display: flex;
 flex-direction: column;
-height: 3.1rem;
 justify-content: center;
 border: none;
 border-top: 1px solid #20588F;
 border-bottom: 1px solid #20588F;
 margin-top: 1rem;
 width: 100%auto;
-flex: 1;
+flex-grow: 0;
 cursor: pointer;
 `
 const Description = styled.optgroup`
@@ -21,11 +19,12 @@ margin: 0;
 const Header = styled.option`
 color: #20588F;
 margin: 0;
+text-transform: capitalize;
 `
 
-function MuscleSelector({activeMuscle}) {
-     console.log('SELECTOR', activeMuscle)
+const MuscleSelector = ({ activeMuscle, allMuscleGroups }) => {
   return (
+       
    <MuscleSelectorWrapper>
        <Description label={activeMuscle.muscleGroup}>Overkropp</Description>
        <Header value="muskelnavn_1">

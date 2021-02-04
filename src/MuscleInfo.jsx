@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-const Text = styled.p`
+const Text = styled.span`
+display: flex;
+flex: 1;
 margin: 0;
 margin-top: 0.5rem;
 `
@@ -18,13 +20,17 @@ margin-top: 0.7rem;
 margin-left: 0.5rem;
 `
 
-function MuscleInfo({info}) {
+const MuscleInfo = ({info, setShowExercises}) => {
+  const handleShowExcercises = () => {
+    setShowExercises(true)
+  }
+  
   return (
       <>
       <Text>
           {info}
       </Text>
-      <LinkWrapper>
+      <LinkWrapper onClick={handleShowExcercises}>
       <LinkToExercise href="#">
       Gå til øvelser
       </LinkToExercise>
