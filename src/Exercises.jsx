@@ -9,7 +9,7 @@ margin-bottom: 0rem;
 border-bottom: ${props =>
 props.active ? '4px solid #20588F' : 'none'};
 color: ${props =>
-props.active ? '4px solid white' : 'none'};
+props.active ? '#20588F' : 'none'};
 &:hover {
     border-bottom: 4px solid #20588F;
     color:  #20588F;
@@ -21,6 +21,10 @@ display: flex;
 flex-direction: row;
 border-bottom: 1px solid #dbdbdb;
 width: auto;
+align-items: flex-end;
+@media only screen and (max-width: 800px) {
+  flex-direction: column;
+}
 `
 const IframeWrapper = styled.div`
 position: relative;
@@ -38,12 +42,10 @@ border: 0;
 `
 
 const Exercises = ({ excercises }) => {
-    console.log("Excersises");
     const [activeExcercise, setActiveExcercise] = useState(0);
     const [video, setVideo] = useState(null);
 
     useEffect(() => {
-        console.log("useEffect", activeExcercise);
         if (activeExcercise !== null) {
             const activeVideo = excercises[activeExcercise];
             setVideo(activeVideo);
@@ -52,12 +54,9 @@ const Exercises = ({ excercises }) => {
         }
     }, [activeExcercise, excercises])
 
-    console.log('activeExcercise', activeExcercise);
-    console.log("video", video);
-
   return (
       <>
-        <ExerciseTitleWrapper>
+        <ExerciseTitleWrapper id="excercises">
             {excercises.map((excercise, key) => {
                 return(
                     <Text 
@@ -71,7 +70,7 @@ const Exercises = ({ excercises }) => {
         </ExerciseTitleWrapper>
         {activeExcercise !== null && video && (
             <IframeWrapper>
-                <Iframe title={video.name} src={video.iframeSrc} allowfullscreen frameborder={0} />
+                <Iframe title={video.name} src={video.iframeSrc} allowFullScreen frameborder={0} />
             </IframeWrapper>
         )}
       </>
