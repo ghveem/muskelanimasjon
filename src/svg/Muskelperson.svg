@@ -147,7 +147,7 @@
 <circle cx="666.5" cy="811.5" r="159.5" fill="#F7F7F7"/>
 <circle cx="666.5" cy="811.5" r="160.5" stroke="black" stroke-width="2"/>
 </g>
-<g id="Mask Group">
+<g id="MaskGroup">
 <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="508" y="653" width="317" height="317">
 <circle id="Ellipse 2" cx="666.5" cy="811.5" r="158.5" fill="#C4C4C4"/>
 </mask>
