@@ -136,7 +136,7 @@ const App = () => {
             setIsFullscreen={(newIsFullscreen) =>
               setIsFullscreen(newIsFullscreen)
             }
-            isFullscreen={fullScreen[0]}
+            isFullscreen={isFullscreen}
             isMobile={mobile}
           />
           <MuscleSelector
