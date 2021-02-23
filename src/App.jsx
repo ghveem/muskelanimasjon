@@ -9,7 +9,7 @@ import {
   getMuscleGroup,
   getMuscleGroupByName,
 } from './MuscleGroupsInfo';
-import { ReactComponent as MusclePerson } from './svg/muskelperson.svg';
+import { ReactComponent as MusclePerson } from './svg/Muskelperson.svg';
 import useIsMobile from './utils/useIsMobile.js';
 import useFullscreen from './utils/useFullscreen.js';
 
