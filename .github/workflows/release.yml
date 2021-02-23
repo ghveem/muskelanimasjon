@@ -29,4 +29,4 @@ jobs:
       - name: 'Build'
         run: npm run build
       - name: 'Release'
-        run: RES=$(aws s3 cp build s3://statisk.test.ndla.no/$COMPONENT/ --recursive)
+        run: aws s3 cp build s3://statisk.test.ndla.no/$COMPONENT/ --recursive
