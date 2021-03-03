@@ -3,7 +3,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Trehodet armstrekker',
     id: 1,
     muscleGroup: 'Armer',
-    info: 'Hovedfunksjon til muskelen: 1. Strekke albueleddet 2. Føre armen bakover',
+    info: 'Hovedfunksjonen til muskelen: 1. Strekke albueleddet. 2. Føre armen bakover.',
     excersises: [{
       name: 'Pushups skulderpress / Armhevinger skulderpress',
       id: 1,
@@ -19,10 +19,10 @@ const MuscleGroupsInfo = [{
     }]
   },{
     name: 'Biceps',
-    norwegianName: 'Tohodet armbøyer og overarmsspolebein-muskelen',
+    norwegianName: 'Tohodet armbøyer og dype armbøyemuskelen',
     id: 2,
     muscleGroup: 'Armer',
-    info: 'Hovedfunksjon til muskelen: Bøye albueleddet',
+    info: 'Hovedfunksjonen til muskelen: Bøye albueleddet.',
     excersises: [{
       name: 'Kroppsheving',
       id: 4,
@@ -45,7 +45,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Framre og midtre del av deltamuskelen',
     id: 3,
     muscleGroup: 'Skulder',
-    info: 'Hovedfunksjon til muskelen: 1. Føre armen frem 2. Føre armen ut fra kroppen',
+    info: 'Hovedfunksjonen til muskelen: 1. Føre armen fram. 2. Føre armen ut fra kroppen.',
     excersises: [{
       name: 'Skulderpress',
       id: 8,
@@ -64,7 +64,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Bakre del av deltamuskelen',
     id: 4,
     muscleGroup: 'Skulder',
-    info: 'Hovedfunksjon til muskelen: Føre armen bakover',
+    info: 'Hovedfunksjonen til muskelen: Føre armen bakover.',
     excersises: [{
       name: 'Kroppsheving med strikk (bakre)',
       id: 11,
@@ -87,7 +87,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Øvre del av kappemuskel',
     id: 5,
     muscleGroup: 'Rygg',
-    info: 'Hovedfunksjon til muskelen: Heve skuldrene',
+    info: 'Hovedfunksjonen til muskelen: Heve skuldrene.',
     excersises: [{
       name: 'Markløft',
       id: 15,
@@ -106,7 +106,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Midtre del av kappemuskel og rombemuskel',
     id: 6,
     muscleGroup: 'Rygg',
-    info: 'Hovedfunksjon til muskelen: Trekke skulderbladene sammen',
+    info: 'Hovedfunksjonen til muskelen: Trekke skulderbladene sammen.',
     excersises: [{
       name: 'Kroppsheving med strikk',
       id: 18,
@@ -137,7 +137,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Store brystmuskel',
     id: 7,
     muscleGroup: 'Bryst',
-    info: 'Hovedfunksjon til muskelen: 1. Fører armen frem og inn 2. Føre armen bakover (nedre del)',
+    info: 'Hovedfunksjonen til muskelen: 1. Fører armen fram og inn. 2. Føre armen bakover (nedre del).',
     excersises: [{
       name: 'Pushups / Armhevinger',
       id: 24,
@@ -152,7 +152,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Brede ryggmuskel og store runde akselmuskel',
     id: 8,
     muscleGroup: 'Rygg',
-    info: 'Hovedfunksjon til muskelen: 1. Føre armen bakover 2. Føre armen innover mot kroppen',
+    info: 'Hovedfunksjonen til muskelen: 1. Føre armen bakover. 2. Føre armen innover mot kroppen.',
     excersises: [{
       name: 'Kroppsheving med strikk (bakre)',
       id: 26,
@@ -183,7 +183,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Rette magemuskel og skrå magemuskel',
     id: 9,
     muscleGroup: 'Mage',
-    info: 'Hovedfunksjon til muskelen: Bøye ryggsøyla',
+    info: 'Hovedfunksjonen til muskelen: Bøye ryggsøyla.',
     excersises: [{
       name: 'Crunch',
       id: 32,
@@ -210,7 +210,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Magens tverrmuskel',
     id: 10,
     muscleGroup: 'Mage',
-    info: 'Hovedfunksjon til muskelen: Lage buktrykk og stabilisere ryggsøyla',
+    info: 'Hovedfunksjonen til muskelen: Lage buktrykk og stabilisere ryggsøyla.',
     excersises: [{
       name: 'Buktrykk',
       id: 37,
@@ -221,7 +221,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Lange ryggstrekker',
     id: 11,
     muscleGroup: 'Rygg',
-    info: 'Hovedfunksjon til muskelen: Strekke ryggsøyla',
+    info: 'Hovedfunksjonen til muskelen: Strekke ryggsøyla.',
     excersises: [{
       name: 'Markløft',
       id: 38,
@@ -248,7 +248,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Hoftas utoverførere',
     id: 12,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: Føre beinet utover fra kroppen, eller stabilisere beinet',
+    info: 'Hovedfunksjonen til muskelen: Føre beinet utover fra kroppen og stabilisere beinet.',
     excersises: [{
       name: 'Ettbeins knebøy',
       id: 43,
@@ -263,7 +263,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Hofteleddsbøyer',
     id: 13,
     muscleGroup: 'Mage',
-    info: 'Hovedfunksjon til muskelen: Bøye i hofteleddet, f.eks føre beinet frem',
+    info: 'Hovedfunksjonen til muskelen: Bøye i hofteleddet, f.eks føre beinet fram.',
     excersises: [{
       name: 'Beinløft med bøyde knær / Beinløft med strake bein',
       id: 45,
@@ -274,7 +274,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Store setemuskel',
     id: 14,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: Strekke i hofteleddet, f.eks ved å føre beinet bakover',
+    info: 'Hovedfunksjonen til muskelen: Strekke i hofteleddet, f.eks ved å føre beinet bakover.',
     excersises: [{
       name: 'Knebøy',
       id: 46,
@@ -309,7 +309,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Hoftas innoverførere',
     id: 15,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: 1. Føre beinet innover mot kroppen 2. Strekke i hofteleddet',
+    info: 'Hovedfunksjonen til muskelen: 1. Føre beinet innover mot kroppen. 2. Strekke i hofteleddet.',
     excersises: [{
       name: 'Knebøy',
       id: 53,
@@ -336,7 +336,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Firehodet knestrekker',
     id: 16,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: Strekke i kneleddet',
+    info: 'Hovedfunksjonen til muskelen: Strekke i kneleddet.',
     excersises: [{
       name: 'Knebøy',
       id: 58,
@@ -363,7 +363,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Tohodet knebøyer',
     id: 17,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: 1. Strekke i hofteleddet, f.eks ved å føre beinet bakover 2. Bøye i kneleddet',
+    info: 'Hovedfunksjonen til muskelen: 1. Strekke i hofteleddet, f.eks ved å føre beinet bakover. 2. Bøye i kneleddet.',
     excersises: [{
       name: 'Markløft',
       id: 63,
@@ -390,7 +390,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Ankelstrekkere',
     id: 18,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: Strekke i ankelleddet',
+    info: 'Hovedfunksjon til muskelen: Strekke i ankelleddet.',
     excersises: [{
       name: 'Tåhev',
       id: 68,
@@ -401,7 +401,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Fremre skinnebeinsmuskel',
     id: 19,
     muscleGroup: 'Bein',
-    info: 'Hovedfunksjon til muskelen: Bøye i ankelleddet, f.eks ved å løfte tærne',
+    info: 'Hovedfunksjonen til muskelen: Bøye i ankelleddet, f.eks ved å løfte tærne.',
     excersises: [{
       name: 'KOMMER SNART',
       id: 69

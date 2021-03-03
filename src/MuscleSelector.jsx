@@ -35,6 +35,9 @@ const Description = styled.optgroup`
   padding: 1rem;
   width: 100%;
   word-wrap: break-word;
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7rem;
+  }
 `;
 const Header = styled.option`
   color: #20588f;
@@ -43,41 +46,49 @@ const Header = styled.option`
   font-size: 1.2rem;
   width: 100%;
   word-wrap: break-word;
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
   const [Arms, setArms] = useState([]);
   const [Shoulder, setShoulder] = useState([]);
   const [Back, setBack] = useState([]);
-  const [Bryst, setBryst] = useState([]);
-  const [Mage, setMage] = useState([]);
-  const [Bein, setBein] = useState([]);
+  const [Chest, setChest] = useState([]);
+  const [Stomach, setStomach] = useState([]);
+  const [Legs, setLegs] = useState([]);
 
   useEffect(() => {
     let arms = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Armer',
     );
     setArms(arms);
+
     let shoulder = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Skulder',
     );
     setShoulder(shoulder);
+
     let back = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Rygg',
     );
     setBack(back);
-    let bryst = allMuscleGroups.filter(
+
+    let chest = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Bryst',
     );
-    setBryst(bryst);
-    let mage = allMuscleGroups.filter(
+    setChest(chest);
+
+    let stomach = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Mage',
     );
-    setMage(mage);
-    let bein = allMuscleGroups.filter(
+    setStomach(stomach);
+
+    let legs = allMuscleGroups.filter(
       (muscles) => muscles.muscleGroup === 'Bein',
     );
-    setBein(bein);
+    setLegs(legs);
   }, [allMuscleGroups]);
 
   const handleOptionOnChange = (e) => {
@@ -118,7 +129,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
         );
       })}
       <Description label="Bryst" />
-      {Bryst.map((muscle, key) => {
+      {Chest.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
             {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
@@ -126,7 +137,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
         );
       })}
       <Description label="Mage" />
-      {Mage.map((muscle, key) => {
+      {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
             {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
@@ -134,7 +145,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
         );
       })}
       <Description label="Bein" />
-      {Bein.map((muscle, key) => {
+      {Legs.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
             {muscle.norwegianName} ({muscle.name.replace('-', ' ')})

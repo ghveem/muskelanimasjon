@@ -145,7 +145,6 @@ const ButtonGroup = ({
   useEffect(() => {
     const handleResize = () => {
       setIsFullscreen((prev) => !prev);
-      console.log('fullscreen', isFullscreen);
     };
 
     // Add event listener
@@ -157,7 +156,7 @@ const ButtonGroup = ({
         'fullscreenchange',
         handleResize,
       );
-  }, [isFullscreen, setIsFullscreen]); // Empty array ensures that effect is only run on mount
+  }, [isFullscreen, setIsFullscreen]);
 
   return (
     <>

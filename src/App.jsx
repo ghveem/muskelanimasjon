@@ -113,12 +113,11 @@ const App = () => {
   const handleSvgOnClick = (e) => {
     const activeMuscleGroup = getMuscleGroupByName(e.target.parentElement.id);
     if (activeMuscleGroup) {
-      console.log('active', activeMuscleGroup);
       setActiveMuscleId(activeMuscleGroup.id);
       setActiveGroup(activeMuscleGroup.name);
     }
   };
-  console.log('fullscreen', fullScreen[0]);
+  console.log('USEFULLSCREEN', fullScreen);
   return (
     <MuscleGroupsWrapper id="app">
       <Header>Øvelser for forskjellige muskelgrupper</Header>
@@ -151,11 +150,20 @@ const App = () => {
             isFullscreen={fullScreen[0]}
             isMobile={mobile}
           />
-          {fullScreen[0] && <Exercises excercises={activeMuscle.excersises} />}
+          {fullScreen[0] && (
+            <Exercises
+              excercises={activeMuscle.excersises}
+              allowFullscreenVideo={false}
+            />
+          )}
         </InformationWrapper>
       </ContentWrapper>
       {!fullScreen[0] && (
-        <Exercises excercises={activeMuscle.excersises} isMobile={mobile} />
+        <Exercises
+          excercises={activeMuscle.excersises}
+          isMobile={mobile}
+          allowFullscreenVideo={true}
+        />
       )}
     </MuscleGroupsWrapper>
   );
