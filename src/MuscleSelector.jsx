@@ -142,9 +142,10 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
             {muscle.norwegianName} (
             {muscle.name
               .toLowerCase()
-              .replace(/-/g, '')
+              .replace(/-/g, ' ')
+              .replace(/1 /g, '/')
               .replace(/1/g, '/')
-              .replace(' click', '')}
+              .replace('click', '')}
             )
           </Header>
         );

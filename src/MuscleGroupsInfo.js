@@ -32,7 +32,7 @@ const MuscleGroupsInfo = [{
       id: 5,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256370001'
     },{
-      name: 'Stående enarms roing med strikk',
+      name: 'Stående enarmsroing med strikk',
       id: 6,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258860001'
     },{
@@ -74,7 +74,7 @@ const MuscleGroupsInfo = [{
       id: 12,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256370001'
     },{
-      name: 'Stående enarms roing med strikk',
+      name: 'Stående enarmsroing med strikk',
       id: 13,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258860001'
     },{
@@ -116,7 +116,7 @@ const MuscleGroupsInfo = [{
       id: 19,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256370001'
     },{
-      name: 'Stående enarms roing med strikk',
+      name: 'Stående enarmsroing med strikk',
       id: 20,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258860001'
     },{
