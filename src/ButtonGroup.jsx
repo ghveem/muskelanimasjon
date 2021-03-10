@@ -146,35 +146,37 @@ const ButtonGroup = ({
 
   //Add eventlistener for fullscreen API
   useEffect(() => {
-      const handleResize = () => {
-        if(isFullscreenFromButton){
-          setIsFullscreen(true)
-          setIsFullscreenFromButton(true)
-        }if(isFullscreen){
-          setIsFullscreen(false)
-        }if(!isFullscreenFromButton && isFullscreen){
-          setIsFullscreen(false)
-          setIsFullscreenFromButton(false)
-        }if(isFullscreenFromButton && isFullscreen){
-          setIsFullscreen(false)
-          setIsFullscreenFromButton(false)
-        }
-      };
-      // Add event listener
-      document.documentElement.addEventListener('fullscreenchange', handleResize);
-  
-      // Remove event listener on cleanup
-      return () =>
-        document.documentElement.removeEventListener(
-          'fullscreenchange',
-          handleResize,
-        );
-     
-    }, [
+    const handleResize = () => {
+      if (isFullscreenFromButton) {
+        setIsFullscreen(true);
+        setIsFullscreenFromButton(true);
+      }
+      if (isFullscreen) {
+        setIsFullscreen(false);
+      }
+      if (!isFullscreenFromButton && isFullscreen) {
+        setIsFullscreen(false);
+        setIsFullscreenFromButton(false);
+      }
+      if (isFullscreenFromButton && isFullscreen) {
+        setIsFullscreen(false);
+        setIsFullscreenFromButton(false);
+      }
+    };
+    // Add event listener
+    document.documentElement.addEventListener('fullscreenchange', handleResize);
+
+    // Remove event listener on cleanup
+    return () =>
+      document.documentElement.removeEventListener(
+        'fullscreenchange',
+        handleResize,
+      );
+  }, [
     setIsFullscreen,
     isFullscreen,
     setIsFullscreenFromButton,
-    isFullscreenFromButton
+    isFullscreenFromButton,
   ]);
 
   return (

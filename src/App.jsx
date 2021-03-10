@@ -71,7 +71,7 @@ const StyledMuscleperson = styled(MusclePerson)`
     > g
     > g#muskelperson_2
     > g#transversus-abdominis,
-    > g#muskelpersonv3
+  > g#muskelpersonv3
     > g#MaskGroup
     > g
     > g#muskelperson_2
@@ -90,7 +90,7 @@ const StyledMuscleperson = styled(MusclePerson)`
     > g#muskelpersonv3
     > g#MaskGroup
     > g
-    > g#muskelperson_2 
+    > g#muskelperson_2
     > g#${(props) => props.active} {
     color: red;
     opacity: 0.8;
@@ -103,9 +103,7 @@ const App = () => {
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [isFullscreenFromButton, setIsFullscreenFromButton] = useState(
-    false,
-  );
+  const [isFullscreenFromButton, setIsFullscreenFromButton] = useState(false);
   const mobile = useIsMobile();
 
   const allMuscleGroups = getAllMuscleGroups();
