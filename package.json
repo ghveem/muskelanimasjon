@@ -1,5 +1,6 @@
 {
   "name": "ndla-muskelgrupper",
+  "homepage": "/muskelanimasjon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
