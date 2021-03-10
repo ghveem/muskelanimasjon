@@ -139,7 +139,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.toLowerCase().replace(/-/g, ' ').replace(/1/g, '/').replace(' click', '')})
+            {muscle.norwegianName} ({muscle.name.toLowerCase().replace(/-/g, '').replace(/1/g, '/').replace(' click', '')})
           </Header>
         );
       })}
