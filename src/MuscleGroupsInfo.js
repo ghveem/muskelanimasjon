@@ -179,7 +179,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259236001'
     }]
   },{
-    name: 'rectus-abdomnis-og-obliqus-internus1eksternus-abdominis',
+    name: 'rectus-abdominis-og-obliqus-internus1eksternus-abdominis',
     norwegianName: 'Rette magemuskel og skrå magemuskel',
     id: 9,
     muscleGroup: 'Mage',
