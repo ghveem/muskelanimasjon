@@ -99,8 +99,10 @@ const App = () => {
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('Triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreenButtonPressed, setIsFullscreenButtonPressed] = useState(
+    false,
+  );
   const mobile = useIsMobile();
-  const fullScreen = useFullscreen();
 
   const allMuscleGroups = getAllMuscleGroups();
   const activeMuscle = getMuscleGroup(activeMuscleId);
@@ -117,7 +119,6 @@ const App = () => {
       setActiveGroup(activeMuscleGroup.name);
     }
   };
-  console.log('USEFULLSCREEN', fullScreen);
   return (
     <MuscleGroupsWrapper id="app">
       <Header>Øvelser for forskjellige muskelgrupper</Header>
@@ -135,8 +136,12 @@ const App = () => {
             setIsFullscreen={(newIsFullscreen) =>
               setIsFullscreen(newIsFullscreen)
             }
-            isFullscreen={fullScreen[0]}
+            isFullscreen={isFullscreen}
             isMobile={mobile}
+            setIsFullscreenButtonPressed={(newIsFullscreenButtonPressed) =>
+              setIsFullscreenButtonPressed(newIsFullscreenButtonPressed)
+            }
+            isFullscreenButtonPressed={isFullscreenButtonPressed}
           />
           <MuscleSelector
             index={activeMuscle.id}
@@ -147,10 +152,10 @@ const App = () => {
           />
           <MuscleInfo
             info={activeMuscle.info}
-            isFullscreen={fullScreen[0]}
+            isFullscreen={isFullscreen}
             isMobile={mobile}
           />
-          {fullScreen[0] && (
+          {isFullscreen && (
             <Exercises
               excercises={activeMuscle.excersises}
               allowFullscreenVideo={false}
@@ -158,7 +163,7 @@ const App = () => {
           )}
         </InformationWrapper>
       </ContentWrapper>
-      {!fullScreen[0] && (
+      {!isFullscreen && (
         <Exercises
           excercises={activeMuscle.excersises}
           isMobile={mobile}

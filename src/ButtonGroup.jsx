@@ -111,8 +111,11 @@ const ButtonGroup = ({
   setIsFullscreen,
   isFullscreen,
   isMobile,
+  setIsFullscreenButtonPressed,
+  isFullscreenButtonPressed,
 }) => {
   const handleFullscreenOnClick = () => {
+    setIsFullscreenButtonPressed(true);
     let elem = document.documentElement;
     if (!isFullscreen) {
       if (elem.requestFullscreen) {
@@ -129,6 +132,7 @@ const ButtonGroup = ({
         elem.msRequestFullscreen();
       }
     } else {
+      setIsFullscreenButtonPressed(false);
       if (elem.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
@@ -145,6 +149,7 @@ const ButtonGroup = ({
   useEffect(() => {
     const handleResize = () => {
       setIsFullscreen((prev) => !prev);
+      console.log('jalla1');
     };
 
     // Add event listener
@@ -156,7 +161,14 @@ const ButtonGroup = ({
         'fullscreenchange',
         handleResize,
       );
-  }, [isFullscreen, setIsFullscreen]);
+  }, [
+    setIsFullscreen,
+    isFullscreenButtonPressed,
+    setIsFullscreenButtonPressed,
+    isFullscreen,
+  ]);
+  console.log('isFullscreenButtonPressed', isFullscreenButtonPressed);
+  console.log('isFullscreen', isFullscreen);
 
   return (
     <>
