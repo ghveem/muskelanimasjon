@@ -9,7 +9,7 @@ import {
   getMuscleGroup,
   getMuscleGroupByName,
 } from './MuscleGroupsInfo';
-import { ReactComponent as MusclePerson } from './svg/Muskelperson.svg';
+import { ReactComponent as MusclePerson } from './svg/muskelpersonv5.svg';
 import useIsMobile from './utils/useIsMobile.js';
 
 const MuscleGroupsWrapper = styled.article`
@@ -65,12 +65,17 @@ const StyledMuscleperson = styled(MusclePerson)`
   height: auto;
   width: auto;
 
-  & > g#muskelpersonv2 > g#muskelperson > g,
-  > g#muskelpersonv2
+  & > g#muskelpersonv3 > g#muskelperson > g,
+  > g#muskelpersonv3
     > g#MaskGroup
     > g
     > g#muskelperson_2
-    > g#Transversus-abdominis {
+    > g#transversus-abdominis,
+    > g#muskelpersonv3
+    > g#MaskGroup
+    > g
+    > g#muskelperson_2
+    > g#transversus-abdominis-click {
     color: #20588f;
     &:hover {
       cursor: pointer;
@@ -79,24 +84,24 @@ const StyledMuscleperson = styled(MusclePerson)`
   }
 
   &
-    > g#muskelpersonv2
+    > g#muskelpersonv3
     > g#muskelperson
     > g#${(props) => props.active},
-    > g#muskelpersonv2
+    > g#muskelpersonv3
     > g#MaskGroup
     > g
-    > g#muskelperson_2
+    > g#muskelperson_2 
     > g#${(props) => props.active} {
     color: red;
+    opacity: 1;
+    &:hover {
+      color: red;
+    }
   }
-
-  /* & > g > g > #${(props) => props.active} {
-    color: red;
-  } */
 `;
 const App = () => {
   const [activeMuscleId, setActiveMuscleId] = useState(1);
-  const [activeGroup, setActiveGroup] = useState('Triceps');
+  const [activeGroup, setActiveGroup] = useState('triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isFullscreenFromButton, setIsFullscreenFromButton] = useState(
     false,
