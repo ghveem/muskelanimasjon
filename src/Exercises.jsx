@@ -8,7 +8,8 @@ const Button = styled.button`
   margin-top: 2.5rem;
   margin-left: 0.5rem;
   margin-right: 1.5rem;
-  padding: 4px;
+  padding: 0.2rem;
+  text-align: left;
   border-bottom: ${(props) => (props.active ? '4px solid #20588F' : 'none')};
   color: ${(props) => (props.active ? '#20588F' : 'none')};
   margin-bottom: ${(props) => (props.active ? 'none' : '4px')};
@@ -63,7 +64,7 @@ const VideoTextWrapper = styled.div`
   width: 100%;
 `;
 
-const Exercises = ({ excercises, isMobile }) => {
+const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
   const [activeExcercise, setActiveExcercise] = useState(0);
   const [video, setVideo] = useState(null);
 
@@ -75,7 +76,6 @@ const Exercises = ({ excercises, isMobile }) => {
       return;
     }
   }, [activeExcercise, excercises]);
-  console.log('isMobile', isMobile);
   return (
     <>
       {!isMobile && (
@@ -95,12 +95,21 @@ const Exercises = ({ excercises, isMobile }) => {
           </ExerciseTitleWrapper>
           {activeExcercise !== null && video && (
             <IframeWrapper>
-              <Iframe
-                title={video.name}
-                src={video.iframeSrc}
-                allowFullScreen
-                frameborder={0}
-              />
+              {allowFullscreenVideo && (
+                <Iframe
+                  title={video.name}
+                  src={video.iframeSrc}
+                  frameborder={0}
+                  allowFullScreen
+                />
+              )}
+              {!allowFullscreenVideo && (
+                <Iframe
+                  title={video.name}
+                  src={video.iframeSrc}
+                  frameborder={0}
+                />
+              )}
             </IframeWrapper>
           )}
         </>
@@ -117,7 +126,12 @@ const Exercises = ({ excercises, isMobile }) => {
                       title={excercise.name}
                       src={excercise.iframeSrc}
                       allowFullScreen
+                      webkitAllowFullScreen
+                      mozAllowFullScreen
                       frameborder={0}
+                      scrolling="no"
+                      width="100vh"
+                      height="100vw"
                     />
                   </IframeWrapper>
                 </VideoTextWrapper>

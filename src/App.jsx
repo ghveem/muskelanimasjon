@@ -9,9 +9,8 @@ import {
   getMuscleGroup,
   getMuscleGroupByName,
 } from './MuscleGroupsInfo';
-import { ReactComponent as MusclePerson } from './svg/muskelperson.svg';
+import { ReactComponent as MusclePerson } from './svg/muskelpersonv5.svg';
 import useIsMobile from './utils/useIsMobile.js';
-import useFullscreen from './utils/useFullscreen.js';
 
 const MuscleGroupsWrapper = styled.article`
   display: flex;
@@ -66,12 +65,17 @@ const StyledMuscleperson = styled(MusclePerson)`
   height: auto;
   width: auto;
 
-  & > g#muskelpersonv2 > g#muskelperson > g,
-  > g#muskelpersonv2
+  & > g#muskelpersonv3 > g#muskelperson > g,
+  > g#muskelpersonv3
     > g#MaskGroup
     > g
     > g#muskelperson_2
-    > g#Transversus-abdominis {
+    > g#transversus-abdominis,
+    > g#muskelpersonv3
+    > g#MaskGroup
+    > g
+    > g#muskelperson_2
+    > g#transversus-abdominis-click {
     color: #20588f;
     &:hover {
       cursor: pointer;
@@ -80,27 +84,29 @@ const StyledMuscleperson = styled(MusclePerson)`
   }
 
   &
-    > g#muskelpersonv2
+    > g#muskelpersonv3
     > g#muskelperson
     > g#${(props) => props.active},
-    > g#muskelpersonv2
+    > g#muskelpersonv3
     > g#MaskGroup
     > g
-    > g#muskelperson_2
+    > g#muskelperson_2 
     > g#${(props) => props.active} {
     color: red;
+    opacity: 1;
+    &:hover {
+      color: red;
+    }
   }
-
-  /* & > g > g > #${(props) => props.active} {
-    color: red;
-  } */
 `;
 const App = () => {
   const [activeMuscleId, setActiveMuscleId] = useState(1);
-  const [activeGroup, setActiveGroup] = useState('Triceps');
+  const [activeGroup, setActiveGroup] = useState('triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreenFromButton, setIsFullscreenFromButton] = useState(
+    false,
+  );
   const mobile = useIsMobile();
-  const fullScreen = useFullscreen();
 
   const allMuscleGroups = getAllMuscleGroups();
   const activeMuscle = getMuscleGroup(activeMuscleId);
@@ -113,12 +119,10 @@ const App = () => {
   const handleSvgOnClick = (e) => {
     const activeMuscleGroup = getMuscleGroupByName(e.target.parentElement.id);
     if (activeMuscleGroup) {
-      console.log('active', activeMuscleGroup);
       setActiveMuscleId(activeMuscleGroup.id);
       setActiveGroup(activeMuscleGroup.name);
     }
   };
-  console.log('fullscreen', fullScreen[0]);
   return (
     <MuscleGroupsWrapper id="app">
       <Header>Øvelser for forskjellige muskelgrupper</Header>
@@ -136,8 +140,12 @@ const App = () => {
             setIsFullscreen={(newIsFullscreen) =>
               setIsFullscreen(newIsFullscreen)
             }
-            isFullscreen={fullScreen[0]}
+            isFullscreen={isFullscreen}
             isMobile={mobile}
+            setIsFullscreenFromButton={(newIsFullscreenButtonPressed) =>
+              setIsFullscreenFromButton(newIsFullscreenButtonPressed)
+            }
+            isFullscreenFromButton={isFullscreenFromButton}
           />
           <MuscleSelector
             index={activeMuscle.id}
@@ -148,14 +156,23 @@ const App = () => {
           />
           <MuscleInfo
             info={activeMuscle.info}
-            isFullscreen={fullScreen[0]}
+            isFullscreen={isFullscreen}
             isMobile={mobile}
           />
-          {fullScreen[0] && <Exercises excercises={activeMuscle.excersises} />}
+          {isFullscreenFromButton && isFullscreen && (
+            <Exercises
+              excercises={activeMuscle.excersises}
+              allowFullscreenVideo={false}
+            />
+          )}
         </InformationWrapper>
       </ContentWrapper>
-      {!fullScreen[0] && (
-        <Exercises excercises={activeMuscle.excersises} isMobile={mobile} />
+      {!isFullscreenFromButton && (
+        <Exercises
+          excercises={activeMuscle.excersises}
+          isMobile={mobile}
+          allowFullscreenVideo={true}
+        />
       )}
     </MuscleGroupsWrapper>
   );
