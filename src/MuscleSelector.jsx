@@ -42,7 +42,6 @@ const Description = styled.optgroup`
 const Header = styled.option`
   color: #20588f;
   padding: 2rem;
-  text-transform: capitalize;
   font-size: 1.2rem;
   width: 100%;
   word-wrap: break-word;
@@ -108,7 +107,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Arms.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -116,7 +115,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Shoulder.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -124,7 +123,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Back.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -132,7 +131,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Chest.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -140,7 +139,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.toLowerCase().replace(/-/g, ' ').replace(/1/g, '/').replace(' click', '')})
           </Header>
         );
       })}
@@ -148,7 +147,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Legs.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace('-', ' ')})
+            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ').replace(/2/g, ',')})
           </Header>
         );
       })}

@@ -1,15 +1,15 @@
 const MuscleGroupsInfo = [{
-    name: 'Triceps',
+    name: 'triceps',
     norwegianName: 'Trehodet armstrekker',
     id: 1,
     muscleGroup: 'Armer',
     info: 'Hovedfunksjonen til muskelen: 1. Strekke albueleddet. 2. Føre armen bakover.',
     excersises: [{
-      name: 'Pushups skulderpress / Armhevinger skulderpress',
+      name: 'Armhevinger skulderpress',
       id: 1,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258063001'
     },{
-      name: 'Pushups / Armhevinger',
+      name: 'Armhevinger',
       id: 2,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258856001'
     },{
@@ -18,7 +18,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228257188001'
     }]
   },{
-    name: 'Biceps',
+    name: 'biceps-og-brachialis',
     norwegianName: 'Tohodet armbøyer og dype armbøyemuskelen',
     id: 2,
     muscleGroup: 'Armer',
@@ -41,7 +41,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259237001'
     }]
   },{
-    name: 'Deltoideus',
+    name: 'deltoideus',
     norwegianName: 'Framre og midtre del av deltamuskelen',
     id: 3,
     muscleGroup: 'Skulder',
@@ -51,22 +51,22 @@ const MuscleGroupsInfo = [{
       id: 8,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228257188001'
     },{
-      name: 'Pushups skulderpress / Armhevinger skulderpress',
+      name: 'Armhevinger skulderpress',
       id: 9,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258063001'
     },{
-      name: 'Pushups / Armhevinger',
+      name: 'Armhevinger',
       id: 10,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258856001'
     }]
   },{
-    name: 'Deltoideus-bak',
+    name: 'deltoideus-bak',
     norwegianName: 'Bakre del av deltamuskelen',
     id: 4,
     muscleGroup: 'Skulder',
     info: 'Hovedfunksjonen til muskelen: Føre armen bakover.',
     excersises: [{
-      name: 'Kroppsheving med strikk (bakre)',
+      name: 'Kroppsheving med strikk',
       id: 11,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260472001'
     },{
@@ -83,7 +83,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259237001'
     }]
   },{
-    name: 'Trapezius',
+    name: 'trapezius',
     norwegianName: 'Øvre del av kappemuskel',
     id: 5,
     muscleGroup: 'Rygg',
@@ -102,7 +102,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256370001'
     }]
   },{
-    name: 'Rhomboideus',
+    name: 'trapezius-og-rhomboideus',
     norwegianName: 'Midtre del av kappemuskel og rombemuskel',
     id: 6,
     muscleGroup: 'Rygg',
@@ -133,28 +133,28 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259236001'
     }]
   },{
-    name: 'Pectoralis-major',
+    name: 'pectoralis-major',
     norwegianName: 'Store brystmuskel',
     id: 7,
     muscleGroup: 'Bryst',
     info: 'Hovedfunksjonen til muskelen: 1. Fører armen fram og inn. 2. Føre armen bakover (nedre del).',
     excersises: [{
-      name: 'Pushups / Armhevinger',
+      name: 'Armhevinger',
       id: 24,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258856001'
     },{
-      name: 'Pushups skulderpress / Armhevinger skulderpress',
+      name: 'Armhevinger skulderpress',
       id: 25,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258063001'
     }]
   },{
-    name: 'Teres-major',
+    name: 'teres-major',
     norwegianName: 'Brede ryggmuskel og store runde akselmuskel',
     id: 8,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: 1. Føre armen bakover. 2. Føre armen innover mot kroppen.',
     excersises: [{
-      name: 'Kroppsheving med strikk (bakre)',
+      name: 'Kroppsheving med strikk',
       id: 26,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260472001'
     },{
@@ -179,7 +179,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259236001'
     }]
   },{
-    name: 'Rectusabdomnis',
+    name: 'rectus-abdomnis-og-obliqus-internus1eksternus-abdominis',
     norwegianName: 'Rette magemuskel og skrå magemuskel',
     id: 9,
     muscleGroup: 'Mage',
@@ -202,7 +202,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256696001'
     }]
   },{
-    name: 'Transversus-abdominis',
+    name: 'transversus-abdominis-click',
     norwegianName: 'Magens tverrmuskel',
     id: 10,
     muscleGroup: 'Mage',
@@ -213,7 +213,7 @@ const MuscleGroupsInfo = [{
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256697001'
     }]
   },{
-    name: 'Erector-spinae',
+    name: 'erector-spinae',
     norwegianName: 'Lange ryggstrekker',
     id: 11,
     muscleGroup: 'Rygg',
@@ -240,22 +240,22 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258859001'
     }]
   },{
-    name: 'Gluteus-medius',
+    name: 'gluteus-medius2-gluteus-minimus2-tensor-facia-latae',
     norwegianName: 'Hoftas utoverførere',
     id: 12,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Føre beinet utover fra kroppen og stabilisere beinet.',
     excersises: [{
-      name: 'Ettbeins knebøy',
+      name: 'Ettbeinsknebøy',
       id: 42,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259235001'
     },{
-      name: 'Ettbeins knebøy med partner',
+      name: 'Ettbeinsknebøy med partner',
       id: 43,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258857001'
     }]
   },{
-    name: 'Iliacus',
+    name: 'ilipsoas1-rectus-femoris',
     norwegianName: 'Hofteleddsbøyer',
     id: 13,
     muscleGroup: 'Mage',
@@ -266,7 +266,7 @@ const MuscleGroupsInfo = [{
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924265001'
     }]
   },{
-    name: 'Gluteus-maximus',
+    name: 'gluteus-maximus',
     norwegianName: 'Store setemuskel',
     id: 14,
     muscleGroup: 'Bein',
@@ -288,11 +288,11 @@ const MuscleGroupsInfo = [{
       id: 48,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260473001'
     },{
-      name: 'Ettbeins knebøy ',
+      name: 'Ettbeinsknebøy ',
       id: 49,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259235001'
     },{
-      name: 'Ettbeins knebøy med partner',
+      name: 'Ettbeinsknebøy med partner',
       id: 50,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258857001'
     },{
@@ -301,7 +301,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924071001'
     }]
   },{
-    name: 'Adductor-longus',
+    name: 'adductor-magnus',
     norwegianName: 'Hoftas innoverførere',
     id: 15,
     muscleGroup: 'Bein',
@@ -315,11 +315,11 @@ const MuscleGroupsInfo = [{
       id: 53,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260473001'
     },{
-      name: 'Ettbeins knebøy',
+      name: 'Ettbeinsknebøy',
       id: 54,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259235001'
     },{
-      name: 'Ettbeins knebøy med partner',
+      name: 'Ettbeinsknebøy med partner',
       id: 55,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258857001'
     },{
@@ -328,7 +328,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228257652001'
     }]
   },{
-    name: 'Quadriceps',
+    name: 'quadriceps',
     norwegianName: 'Firehodet knestrekker',
     id: 16,
     muscleGroup: 'Bein',
@@ -342,11 +342,11 @@ const MuscleGroupsInfo = [{
       id: 58,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260473001'
     },{
-      name: 'Ettbeins knebøy',
+      name: 'Ettbeinsknebøy',
       id: 59,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259235001'
     },{
-      name: 'Ettbeins knebøy med partner',
+      name: 'Ettbeinsknebøy med partner',
       id: 60,
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258857001'
     },{
@@ -355,7 +355,7 @@ const MuscleGroupsInfo = [{
       iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228257652001'
     }]
   },{
-    name: 'Hamstring',
+    name: 'hamstring',
     norwegianName: 'Tohodet knebøyer',
     id: 17,
     muscleGroup: 'Bein',
@@ -369,7 +369,7 @@ const MuscleGroupsInfo = [{
       id: 63,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228259236001'
     },{
-      name: 'Bekkenløft ',
+      name: 'Bekkenløft',
       id: 64,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260471001'
     },{
@@ -382,7 +382,7 @@ const MuscleGroupsInfo = [{
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228258064001'
     }]
   },{
-    name: 'Gastrocnemius',
+    name: 'gastrocnemius-og-soleus',
     norwegianName: 'Ankelstrekkere',
     id: 18,
     muscleGroup: 'Bein',
@@ -393,7 +393,7 @@ const MuscleGroupsInfo = [{
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924352001'
     }]
   },{
-    name: 'Tibialis',
+    name: 'tibialis-anterior',
     norwegianName: 'Fremre skinnebeinsmuskel',
     id: 19,
     muscleGroup: 'Bein',
