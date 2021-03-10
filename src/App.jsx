@@ -93,7 +93,7 @@ const StyledMuscleperson = styled(MusclePerson)`
     > g#muskelperson_2 
     > g#${(props) => props.active} {
     color: red;
-    opacity: 1;
+    opacity: 0.8;
     &:hover {
       color: red;
     }
