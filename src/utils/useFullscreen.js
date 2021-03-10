@@ -39,10 +39,8 @@ const isBrowserFullscreen = () =>
 
 const toggleFullscreen = el => {
   if (isBrowserFullscreen()) {
-    console.log('exitFullscreen')
     exitFullscreen();
   } else {
-    console.log('requestFullscreen')
     requestFullscreen(el);
   }
 };
@@ -50,7 +48,6 @@ const toggleFullscreen = el => {
 export default function useFullscreen() {
   const [isFullscreen, setIsFullscreen] = useState(isBrowserFullscreen());
   useEffect(() => {
-    console.log('enabled', fullscreenEnabled)
     if (!fullscreenEnabled) return;
     const handleFullscreenChange = () => setIsFullscreen(isBrowserFullscreen());
     doc.addEventListener(changeEvent, handleFullscreenChange);

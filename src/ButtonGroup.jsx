@@ -111,8 +111,11 @@ const ButtonGroup = ({
   setIsFullscreen,
   isFullscreen,
   isMobile,
+  setIsFullscreenFromButton,
+  isFullscreenFromButton,
 }) => {
   const handleFullscreenOnClick = () => {
+    setIsFullscreenFromButton(true);
     let elem = document.documentElement;
     if (!isFullscreen) {
       if (elem.requestFullscreen) {
@@ -144,10 +147,22 @@ const ButtonGroup = ({
   //Add eventlistener for fullscreen API
   useEffect(() => {
     const handleResize = () => {
-      setIsFullscreen((prev) => !prev);
-      console.log('fullscreen', isFullscreen);
+      if (isFullscreenFromButton) {
+        setIsFullscreen(true);
+        setIsFullscreenFromButton(true);
+      }
+      if (isFullscreen) {
+        setIsFullscreen(false);
+      }
+      if (!isFullscreenFromButton && isFullscreen) {
+        setIsFullscreen(false);
+        setIsFullscreenFromButton(false);
+      }
+      if (isFullscreenFromButton && isFullscreen) {
+        setIsFullscreen(false);
+        setIsFullscreenFromButton(false);
+      }
     };
-
     // Add event listener
     document.documentElement.addEventListener('fullscreenchange', handleResize);
 
@@ -157,7 +172,12 @@ const ButtonGroup = ({
         'fullscreenchange',
         handleResize,
       );
-  }, [isFullscreen, setIsFullscreen]); // Empty array ensures that effect is only run on mount
+  }, [
+    setIsFullscreen,
+    isFullscreen,
+    setIsFullscreenFromButton,
+    isFullscreenFromButton,
+  ]);
 
   return (
     <>

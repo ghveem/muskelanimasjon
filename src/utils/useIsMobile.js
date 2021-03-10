@@ -9,6 +9,8 @@ const useIsMobile = () => {
       // Set boolean to state
       if (window.innerWidth <= 800) {
         setIsMobile(true);
+      }else{
+        setIsMobile(false);
       }
     }
     // Add event listener
