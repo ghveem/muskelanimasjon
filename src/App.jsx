@@ -9,9 +9,8 @@ import {
   getMuscleGroup,
   getMuscleGroupByName,
 } from './MuscleGroupsInfo';
-import { ReactComponent as MusclePerson } from './svg/muskelperson.svg';
+import { ReactComponent as MusclePerson } from './svg/Muskelperson.svg';
 import useIsMobile from './utils/useIsMobile.js';
-import useFullscreen from './utils/useFullscreen.js';
 
 const MuscleGroupsWrapper = styled.article`
   display: flex;
@@ -99,7 +98,7 @@ const App = () => {
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('Triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [isFullscreenButtonPressed, setIsFullscreenButtonPressed] = useState(
+  const [isFullscreenFromButton, setIsFullscreenFromButton] = useState(
     false,
   );
   const mobile = useIsMobile();
@@ -138,10 +137,10 @@ const App = () => {
             }
             isFullscreen={isFullscreen}
             isMobile={mobile}
-            setIsFullscreenButtonPressed={(newIsFullscreenButtonPressed) =>
-              setIsFullscreenButtonPressed(newIsFullscreenButtonPressed)
+            setIsFullscreenFromButton={(newIsFullscreenButtonPressed) =>
+              setIsFullscreenFromButton(newIsFullscreenButtonPressed)
             }
-            isFullscreenButtonPressed={isFullscreenButtonPressed}
+            isFullscreenFromButton={isFullscreenFromButton}
           />
           <MuscleSelector
             index={activeMuscle.id}
@@ -155,7 +154,7 @@ const App = () => {
             isFullscreen={isFullscreen}
             isMobile={mobile}
           />
-          {isFullscreen && (
+          {isFullscreenFromButton && isFullscreen && (
             <Exercises
               excercises={activeMuscle.excersises}
               allowFullscreenVideo={false}
@@ -163,7 +162,7 @@ const App = () => {
           )}
         </InformationWrapper>
       </ContentWrapper>
-      {!isFullscreen && (
+      {!isFullscreenFromButton && (
         <Exercises
           excercises={activeMuscle.excersises}
           isMobile={mobile}

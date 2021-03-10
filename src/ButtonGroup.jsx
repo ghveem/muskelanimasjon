@@ -111,11 +111,11 @@ const ButtonGroup = ({
   setIsFullscreen,
   isFullscreen,
   isMobile,
-  setIsFullscreenButtonPressed,
-  isFullscreenButtonPressed,
+  setIsFullscreenFromButton,
+  isFullscreenFromButton,
 }) => {
   const handleFullscreenOnClick = () => {
-    setIsFullscreenButtonPressed(true);
+    setIsFullscreenFromButton(true);
     let elem = document.documentElement;
     if (!isFullscreen) {
       if (elem.requestFullscreen) {
@@ -132,7 +132,6 @@ const ButtonGroup = ({
         elem.msRequestFullscreen();
       }
     } else {
-      setIsFullscreenButtonPressed(false);
       if (elem.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
@@ -147,28 +146,36 @@ const ButtonGroup = ({
 
   //Add eventlistener for fullscreen API
   useEffect(() => {
-    const handleResize = () => {
-      setIsFullscreen((prev) => !prev);
-      console.log('jalla1');
-    };
-
-    // Add event listener
-    document.documentElement.addEventListener('fullscreenchange', handleResize);
-
-    // Remove event listener on cleanup
-    return () =>
-      document.documentElement.removeEventListener(
-        'fullscreenchange',
-        handleResize,
-      );
-  }, [
+      const handleResize = () => {
+        if(isFullscreenFromButton){
+          setIsFullscreen(true)
+          setIsFullscreenFromButton(true)
+        }if(isFullscreen){
+          setIsFullscreen(false)
+        }if(!isFullscreenFromButton && isFullscreen){
+          setIsFullscreen(false)
+          setIsFullscreenFromButton(false)
+        }if(isFullscreenFromButton && isFullscreen){
+          setIsFullscreen(false)
+          setIsFullscreenFromButton(false)
+        }
+      };
+      // Add event listener
+      document.documentElement.addEventListener('fullscreenchange', handleResize);
+  
+      // Remove event listener on cleanup
+      return () =>
+        document.documentElement.removeEventListener(
+          'fullscreenchange',
+          handleResize,
+        );
+     
+    }, [
     setIsFullscreen,
-    isFullscreenButtonPressed,
-    setIsFullscreenButtonPressed,
     isFullscreen,
+    setIsFullscreenFromButton,
+    isFullscreenFromButton
   ]);
-  console.log('isFullscreenButtonPressed', isFullscreenButtonPressed);
-  console.log('isFullscreen', isFullscreen);
 
   return (
     <>
