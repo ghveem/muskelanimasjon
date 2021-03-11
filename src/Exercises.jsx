@@ -126,6 +126,7 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                       title={excercise.name}
                       src={excercise.iframeSrc}
                       allowFullScreen
+                      autoPlay
                       webkitAllowFullScreen
                       mozAllowFullScreen
                       frameborder={0}

@@ -19,6 +19,12 @@ const MuscleGroupsWrapper = styled.article`
   height: auto;
   padding: 1rem;
   background-color: white;
+  @media only screen and (min-width: 1920px) {
+    display: flex;
+    max-width: 1920px;
+    justify-content: center;
+    align-content: center;
+  }
 `;
 const Header = styled.h1`
   display: flex;
