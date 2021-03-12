@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from '@emotion/styled';
 import MuscleSelector from './MuscleSelector';
 import MuscleInfo from './MuscleInfo';
@@ -11,6 +11,7 @@ import {
 } from './MuscleGroupsInfo';
 import { ReactComponent as MusclePerson } from './svg/muskelpersonv5.svg';
 import useIsMobile from './utils/useIsMobile.js';
+import { languageContext } from './utils/context';
 
 const MuscleGroupsWrapper = styled.article`
   display: flex;
@@ -19,13 +20,27 @@ const MuscleGroupsWrapper = styled.article`
   height: auto;
   padding: 1rem;
   background-color: white;
+  max-width: ${(props) => (props.isFullscreen ? '1920px' : 'auto')};
+  margin-left: ${(props) => (props.isFullscreen ? '10vw' : '0')};
   @media only screen and (min-width: 1920px) {
     display: flex;
-    max-width: 1920px;
     justify-content: center;
     align-content: center;
   }
 `;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Header = styled.h1`
   display: flex;
   width: 100%auto;
@@ -45,6 +60,23 @@ const Header = styled.h1`
     font-size: 16px;
   }
 `;
+
+const Button = styled.button`
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  color: #20588f;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px #20588f;
+  }
+`;
+
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -53,6 +85,7 @@ const ContentWrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const InteractiveSvgWrapper = styled.div`
   display: flex;
   flex: 1;
@@ -67,6 +100,7 @@ const InformationWrapper = styled.div`
   flex-direction: column;
   flex: 1;
 `;
+
 const StyledMuscleperson = styled(MusclePerson)`
   height: auto;
   width: auto;
@@ -106,6 +140,10 @@ const StyledMuscleperson = styled(MusclePerson)`
   }
 `;
 const App = () => {
+  const { newNorwegianLanguage, setNewNorwegianLanguage } = useContext(
+    languageContext,
+  );
+
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -120,6 +158,16 @@ const App = () => {
     setActiveGroup(activeMuscle.name);
   }, [activeMuscleId, activeMuscle]);
 
+  const handleLanguageChanged = () => {
+    if (!newNorwegianLanguage) {
+      setNewNorwegianLanguage(true);
+    } else if (newNorwegianLanguage) {
+      setNewNorwegianLanguage(false);
+    } else {
+      return;
+    }
+  };
+
   const handleSvgOnClick = (e) => {
     const activeMuscleGroup = getMuscleGroupByName(e.target.parentElement.id);
     if (activeMuscleGroup) {
@@ -128,57 +176,72 @@ const App = () => {
     }
   };
   return (
-    <MuscleGroupsWrapper id="app">
-      <Header>Øvelser for forskjellige muskelgrupper</Header>
-      <ContentWrapper>
-        <InteractiveSvgWrapper>
-          <StyledMuscleperson onClick={handleSvgOnClick} active={activeGroup} />
-        </InteractiveSvgWrapper>
-        <InformationWrapper>
-          <ButtonGroup
-            index={activeMuscle.id}
-            setActiveMuscle={(newActiveMuscle) =>
-              setActiveMuscleId(newActiveMuscle)
-            }
-            length={allMuscleGroups.length}
-            setIsFullscreen={(newIsFullscreen) =>
-              setIsFullscreen(newIsFullscreen)
-            }
-            isFullscreen={isFullscreen}
-            isMobile={mobile}
-            setIsFullscreenFromButton={(newIsFullscreenButtonPressed) =>
-              setIsFullscreenFromButton(newIsFullscreenButtonPressed)
-            }
-            isFullscreenFromButton={isFullscreenFromButton}
-          />
-          <MuscleSelector
-            index={activeMuscle.id}
-            allMuscleGroups={allMuscleGroups}
-            setActiveMuscle={(newActiveMuscle) =>
-              setActiveMuscleId(newActiveMuscle)
-            }
-          />
-          <MuscleInfo
-            info={activeMuscle.info}
-            isFullscreen={isFullscreen}
-            isMobile={mobile}
-          />
-          {isFullscreenFromButton && isFullscreen && (
-            <Exercises
-              excercises={activeMuscle.excersises}
-              allowFullscreenVideo={false}
+    <Wrapper>
+      <MuscleGroupsWrapper id="app" isFullscreen={isFullscreen}>
+        <HeaderWrapper>
+          <Header>
+            {!newNorwegianLanguage
+              ? 'Øvelser for forskjellige muskelgrupper'
+              : 'Øvingar for ulike muskelgrupper'}
+          </Header>
+          <Button onClick={handleLanguageChanged}>
+            {newNorwegianLanguage ? 'Bokmål' : 'Nynorsk'}
+          </Button>
+        </HeaderWrapper>
+
+        <ContentWrapper>
+          <InteractiveSvgWrapper>
+            <StyledMuscleperson
+              onClick={handleSvgOnClick}
+              active={activeGroup}
             />
-          )}
-        </InformationWrapper>
-      </ContentWrapper>
-      {!isFullscreenFromButton && (
-        <Exercises
-          excercises={activeMuscle.excersises}
-          isMobile={mobile}
-          allowFullscreenVideo={true}
-        />
-      )}
-    </MuscleGroupsWrapper>
+          </InteractiveSvgWrapper>
+          <InformationWrapper>
+            <ButtonGroup
+              index={activeMuscle.id}
+              setActiveMuscle={(newActiveMuscle) =>
+                setActiveMuscleId(newActiveMuscle)
+              }
+              length={allMuscleGroups.length}
+              setIsFullscreen={(newIsFullscreen) =>
+                setIsFullscreen(newIsFullscreen)
+              }
+              isFullscreen={isFullscreen}
+              isMobile={mobile}
+              setIsFullscreenFromButton={(newIsFullscreenButtonPressed) =>
+                setIsFullscreenFromButton(newIsFullscreenButtonPressed)
+              }
+              isFullscreenFromButton={isFullscreenFromButton}
+            />
+            <MuscleSelector
+              index={activeMuscle.id}
+              allMuscleGroups={allMuscleGroups}
+              setActiveMuscle={(newActiveMuscle) =>
+                setActiveMuscleId(newActiveMuscle)
+              }
+            />
+            <MuscleInfo
+              info={activeMuscle.info}
+              isFullscreen={isFullscreen}
+              isMobile={mobile}
+            />
+            {isFullscreenFromButton && isFullscreen && (
+              <Exercises
+                excercises={activeMuscle.excersises}
+                allowFullscreenVideo={false}
+              />
+            )}
+          </InformationWrapper>
+        </ContentWrapper>
+        {!isFullscreenFromButton && (
+          <Exercises
+            excercises={activeMuscle.excersises}
+            isMobile={mobile}
+            allowFullscreenVideo={true}
+          />
+        )}
+      </MuscleGroupsWrapper>
+    </Wrapper>
   );
 };
 

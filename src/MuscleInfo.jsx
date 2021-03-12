@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 import arrow from './img/arrow.png';
+
+import { languageContext } from './utils/context';
 
 const Text = styled.span`
   display: flex;
@@ -27,12 +29,15 @@ const Img = styled.img`
 `;
 
 const MuscleInfo = ({ info, isFullscreen, isMobile }) => {
+  const { newNorwegianLanguage } = useContext(languageContext);
   return (
     <>
       <Text>{info}</Text>
       {!isFullscreen && !isMobile && (
         <LinkWrapper>
-          <LinkToExercise href="#excercises">Gå til øvelser</LinkToExercise>
+          <LinkToExercise href="#excercises">
+            {newNorwegianLanguage ? 'Gå til øvingar' : 'Gå til øvelser'}
+          </LinkToExercise>
           <Img alt="arrow" src={arrow} height="25px" width="30px" />
         </LinkWrapper>
       )}

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from '@emotion/styled';
+
+import { languageContext } from './utils/context';
 
 const MuscleSelectorWrapper = styled.select`
   display: flex;
@@ -51,6 +53,8 @@ const Header = styled.option`
 `;
 
 const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
+  const { newNorwegianLanguage } = useContext(languageContext);
+
   const [Arms, setArms] = useState([]);
   const [Shoulder, setShoulder] = useState([]);
   const [Back, setBack] = useState([]);
@@ -103,19 +107,25 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       onChange={() => handleOptionOnChange()}
       value={index}
     >
-      <Description label="Armer" />
+      <Description label={newNorwegianLanguage ? 'Armar' : 'Armer'} />
       {Arms.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
-      <Description label="Skulder" />
+      <Description label={newNorwegianLanguage ? 'Skulder' : 'Skulder'} />
       {Shoulder.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -123,7 +133,10 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Back.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -131,7 +144,10 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Chest.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            ({muscle.name.replace(/-/g, ' ')})
           </Header>
         );
       })}
@@ -139,7 +155,10 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} (
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            (
             {muscle.name
               .toLowerCase()
               .replace(/-/g, ' ')
@@ -154,8 +173,10 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Legs.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {muscle.norwegianName} (
-            {muscle.name.replace(/-/g, ' ').replace(/2/g, ',')})
+            {newNorwegianLanguage
+              ? muscle.newNorwegianName
+              : muscle.norwegianName}{' '}
+            ({muscle.name.replace(/-/g, ' ').replace(/2/g, ',')})
           </Header>
         );
       })}

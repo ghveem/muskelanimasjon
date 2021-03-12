@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from '@emotion/styled';
+
+import { languageContext } from './utils/context';
 
 const Button = styled.button`
   border: none;
@@ -65,6 +67,8 @@ const VideoTextWrapper = styled.div`
 `;
 
 const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
+  const { newNorwegianLanguage } = useContext(languageContext);
+
   const [activeExcercise, setActiveExcercise] = useState(0);
   const [video, setVideo] = useState(null);
 
@@ -88,7 +92,9 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                   active={activeExcercise === key}
                   onClick={() => setActiveExcercise(key)}
                 >
-                  {excercise.name}
+                  {newNorwegianLanguage
+                    ? excercise.newNorwegianName
+                    : excercise.name}
                 </Button>
               );
             })}
@@ -98,7 +104,11 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
               {allowFullscreenVideo && (
                 <Iframe
                   title={video.name}
-                  src={video.iframeSrc}
+                  src={
+                    newNorwegianLanguage
+                      ? video.newNorwegianIframeSrc
+                      : video.iframeSrc
+                  }
                   frameborder={0}
                   allowFullScreen
                 />
@@ -106,7 +116,11 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
               {!allowFullscreenVideo && (
                 <Iframe
                   title={video.name}
-                  src={video.iframeSrc}
+                  src={
+                    newNorwegianLanguage
+                      ? video.newNorwegianIframeSrc
+                      : video.iframeSrc
+                  }
                   frameborder={0}
                 />
               )}
@@ -120,11 +134,19 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
             {excercises.map((excercise, key) => {
               return (
                 <VideoTextWrapper key={key}>
-                  <Button disabled>{excercise.name}</Button>
+                  <Button disabled>
+                    {newNorwegianLanguage
+                      ? excercise.newNorwegianName
+                      : excercise.name}
+                  </Button>
                   <IframeWrapper>
                     <Iframe
                       title={excercise.name}
-                      src={excercise.iframeSrc}
+                      src={
+                        newNorwegianLanguage
+                          ? excercise.iframeSrc
+                          : excercise.newNorwegianIframeSrc
+                      }
                       allowFullScreen
                       autoPlay
                       webkitAllowFullScreen
