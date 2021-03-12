@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+import {LanguageProvider} from './utils/context'
 import reportWebVitals from './reportWebVitals';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -11,7 +12,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
   <React.StrictMode>
+    <LanguageProvider>
     <App />
+    </LanguageProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

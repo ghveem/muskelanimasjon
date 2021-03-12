@@ -36,6 +36,7 @@ const FullscreenButton = styled.button`
     border: 2px solid #20588f;
     color: #20588f;
     background-color: white;
+    padding: 0.5rem;
   }
   &:focus {
     outline: none;
