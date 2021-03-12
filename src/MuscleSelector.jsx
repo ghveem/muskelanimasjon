@@ -111,7 +111,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Arms.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             ({muscle.name.replace(/-/g, ' ')})
@@ -122,7 +122,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Shoulder.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             ({muscle.name.replace(/-/g, ' ')})
@@ -133,7 +133,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Back.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             ({muscle.name.replace(/-/g, ' ')})
@@ -144,7 +144,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Chest.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             ({muscle.name.replace(/-/g, ' ')})
@@ -155,7 +155,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             (
@@ -173,7 +173,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Legs.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage
+            {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
             ({muscle.name.replace(/-/g, ' ').replace(/2/g, ',')})
