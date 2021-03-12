@@ -192,7 +192,7 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924267001',
     }]
   },{
-    name: 'teres-major',
+    name: 'latissimus-dorsi-og-teres-major',
     norwegianName: 'Brede ryggmuskel og store runde akselmuskel',
     newNorwegianName: 'Breie ryggmuskel',
     id: 8,
