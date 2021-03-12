@@ -92,7 +92,7 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                   active={activeExcercise === key}
                   onClick={() => setActiveExcercise(key)}
                 >
-                  {newNorwegianLanguage
+                  {newNorwegianLanguage && excercise.newNorwegianName
                     ? excercise.newNorwegianName
                     : excercise.name}
                 </Button>
@@ -105,7 +105,7 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                 <Iframe
                   title={video.name}
                   src={
-                    newNorwegianLanguage
+                    newNorwegianLanguage && video.newNorwegianIframeSrc
                       ? video.newNorwegianIframeSrc
                       : video.iframeSrc
                   }
@@ -117,7 +117,7 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                 <Iframe
                   title={video.name}
                   src={
-                    newNorwegianLanguage
+                    newNorwegianLanguage && video.newNorwegianIframeSrc
                       ? video.newNorwegianIframeSrc
                       : video.iframeSrc
                   }
@@ -135,7 +135,7 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
               return (
                 <VideoTextWrapper key={key}>
                   <Button disabled>
-                    {newNorwegianLanguage
+                    {newNorwegianLanguage && excercise.newNorwegianName
                       ? excercise.newNorwegianName
                       : excercise.name}
                   </Button>
@@ -143,9 +143,9 @@ const Exercises = ({ excercises, isMobile, allowFullscreenVideo }) => {
                     <Iframe
                       title={excercise.name}
                       src={
-                        newNorwegianLanguage
-                          ? excercise.iframeSrc
-                          : excercise.newNorwegianIframeSrc
+                        newNorwegianLanguage && excercise.newNorwegianIframeSrc
+                          ? excercise.newNorwegianIframeSrc
+                          : excercise.iframeSrc
                       }
                       allowFullScreen
                       autoPlay
