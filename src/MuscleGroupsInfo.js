@@ -5,6 +5,7 @@ const MuscleGroupsInfo = [{
     id: 1,
     muscleGroup: 'Armer',
     info: 'Hovedfunksjonen til muskelen: 1. Strekke albueleddet. 2. Føre armen bakover.',
+    newNorwegianInfo: 'Hovedfunksjonen til muskelen: 1. Strekke albogeleddet. 2. Føre armen bakover.',
     excersises: [{
       name: 'Armhevinger skulderpress',
       newNorwegianName: 'Armhevingar skulderpress',
@@ -30,6 +31,7 @@ const MuscleGroupsInfo = [{
     id: 2,
     muscleGroup: 'Armer',
     info: 'Hovedfunksjonen til muskelen: Bøye albueleddet.',
+    newNorwegianInfo: 'Hovedfunksjonen til muskelen: Bøye albogeleddet.',
     excersises: [{
       name: 'Kroppsheving',
       id: 4,
@@ -137,6 +139,7 @@ const MuscleGroupsInfo = [{
     id: 6,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: Trekke skulderbladene sammen.',
+    newNorwegianInfo:'Hovedfunksjonen til muskelen: Trekkje skulderblada saman',
     excersises: [{
       name: 'Kroppsheving med strikk',
       id: 18,
@@ -177,7 +180,7 @@ const MuscleGroupsInfo = [{
     norwegianName: 'Store brystmuskel',
     id: 7,
     muscleGroup: 'Bryst',
-    info: 'Hovedfunksjonen til muskelen: 1. Fører armen fram og inn. 2. Føre armen bakover (nedre del).',
+    info: 'Hovedfunksjonen til muskelen: 1. Fører armen fram og inn. 2. Føre armen bakover (nedre del av muskelen).',
     excersises: [{
       name: 'Armhevinger',
       newNorwegianName: 'Armhevingar',
@@ -194,7 +197,7 @@ const MuscleGroupsInfo = [{
   },{
     name: 'latissimus-dorsi-og-teres-major',
     norwegianName: 'Brede ryggmuskel og store runde akselmuskel',
-    newNorwegianName: 'Breie ryggmuskel',
+    newNorwegianName: 'Breie ryggmuskel og store runde akselmuskel',
     id: 8,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: 1. Føre armen bakover. 2. Føre armen innover mot kroppen.',
@@ -246,6 +249,7 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921781001',
     },{
       name: 'Beinløft med bøyde knær / Beinløft med strake bein (kommer snart)',
+      newNorwegianName: 'Beinløft med bøygde knær / beinløft med strake bein (kjem snart)',
       id: 33,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924265001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924072001',
@@ -338,7 +342,7 @@ const MuscleGroupsInfo = [{
     info: 'Hovedfunksjonen til muskelen: Bøye i hofteleddet, f.eks føre beinet fram.',
     excersises: [{
       name: 'Beinløft med bøyde knær / Beinløft med strake bein (kommer snart)',
-      newNorwegianName: 'Beinløft med bøygde kne',
+      newNorwegianName: 'Beinløft med bøygde kne / beinløft med strake bein (kjem snart)',
       id: 44,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924265001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924072001',
@@ -502,6 +506,7 @@ const MuscleGroupsInfo = [{
     info: 'Hovedfunksjon til muskelen: Strekke i ankelleddet.',
     excersises: [{
       name: 'Tåhev (kommer snart)',
+      newNorwegianName: 'Tåhev (kjem snart)',
       id: 67,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924352001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237920773001',
@@ -514,6 +519,7 @@ const MuscleGroupsInfo = [{
     info: 'Hovedfunksjonen til muskelen: Bøye i ankelleddet, f.eks ved å løfte tærne.',
     excersises: [{
       name: 'Tåstrekk (kommer snart)',
+      newNorwegianName: 'Tåstrekk (kjem snart)',
       id: 68,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919561001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924353001',

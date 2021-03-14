@@ -28,11 +28,15 @@ const Img = styled.img`
   margin-left: 0.2rem;
 `;
 
-const MuscleInfo = ({ info, isFullscreen, isMobile }) => {
+const MuscleInfo = ({ activeMuscle, isFullscreen, isMobile }) => {
   const { newNorwegianLanguage } = useContext(languageContext);
   return (
     <>
-      <Text>{info}</Text>
+      <Text>
+        {newNorwegianLanguage && activeMuscle.newNorwegianInfo
+          ? activeMuscle.newNorwegianInfo
+          : activeMuscle.info}
+      </Text>
       {!isFullscreen && !isMobile && (
         <LinkWrapper>
           <LinkToExercise href="#excercises">

@@ -42,6 +42,9 @@ const FullscreenButton = styled.button`
     outline: none;
     box-shadow: 0 0 2px #20588f;
   }
+  @media only screen and (min-width: 1920px) {
+    font-size: 14px;
+  }
   @media only screen and (max-width: 1235px) {
     font-size: 14px;
   }
@@ -89,6 +92,9 @@ const Button = styled.button`
   &:focus {
     outline: none;
     box-shadow: 0 0 2px #2222cc;
+  }
+  @media only screen and (min-width: 1920px) {
+    font-size: 14px;
   }
   @media only screen and (max-width: 1235px) {
     font-size: 14px;

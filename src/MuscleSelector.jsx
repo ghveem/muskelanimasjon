@@ -125,7 +125,7 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
             {newNorwegianLanguage && muscle.newNorwegianName
               ? muscle.newNorwegianName
               : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ')})
+            ({muscle.name.replace(/-/g, ' ').replace(' bak', '')})
           </Header>
         );
       })}
