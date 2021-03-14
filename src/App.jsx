@@ -102,8 +102,8 @@ const InformationWrapper = styled.div`
 `;
 
 const StyledMuscleperson = styled(MusclePerson)`
-  height: auto;
-  width: auto;
+  height: ${(props) => (props.safariAgent ? '800' : 'auto')};
+  width: ${(props) => (props.safariAgent ? '800' : 'auto')};
 
   & > g#muskelpersonv3 > g#muskelperson > g,
   > g#muskelpersonv3
@@ -143,6 +143,18 @@ const App = () => {
   const { newNorwegianLanguage, setNewNorwegianLanguage } = useContext(
     languageContext,
   );
+
+  // Get the user-agent string
+  let userAgentString = navigator.userAgent;
+
+  // Detect Chrome
+  let chromeAgent = userAgentString.indexOf('Chrome') > -1;
+
+  // Detect Safari
+  let safariAgent = userAgentString.indexOf('Safari') > -1;
+
+  // Discard Chrome since it also matches Safari
+  if (chromeAgent && safariAgent) safariAgent = false;
 
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('triceps');
@@ -192,8 +204,7 @@ const App = () => {
         <ContentWrapper isFullscreen={isFullscreen}>
           <InteractiveSvgWrapper>
             <StyledMuscleperson
-              type="image/svg+xml"
-              data={MusclePerson}
+              safariAgent={safariAgent}
               onClick={handleSvgOnClick}
               active={activeGroup}
             />
