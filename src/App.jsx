@@ -102,8 +102,8 @@ const InformationWrapper = styled.div`
 `;
 
 const StyledMuscleperson = styled(MusclePerson)`
-  height: ${(props) => (props.safariAgent ? '800' : 'auto')};
-  width: ${(props) => (props.safariAgent ? '800' : 'auto')};
+  height: ${(props) => (props.safariAgent ? '800px' : 'auto')};
+  width: ${(props) => (props.safariAgent ? '800px' : 'auto')};
 
   & > g#muskelpersonv3 > g#muskelperson > g,
   > g#muskelpersonv3
@@ -153,7 +153,7 @@ const App = () => {
   // Detect Safari
   let safariAgent = userAgentString.indexOf('Safari') > -1;
 
-  // Discard Chrome since it also matches Safari
+  // Discard Safar since it also matches Chrome
   if (chromeAgent && safariAgent) safariAgent = false;
 
   const [activeMuscleId, setActiveMuscleId] = useState(1);
@@ -208,6 +208,17 @@ const App = () => {
               onClick={handleSvgOnClick}
               active={activeGroup}
             />
+            {safariAgent && (
+              <>
+                <iframe title="MusclePerson" src={MusclePerson}></iframe>
+                <embed src={MusclePerson} type="image/svg+xml"></embed>
+                <object
+                  aria-label="Muskelperson"
+                  data={MusclePerson}
+                  type="image/svg+xml"
+                ></object>
+              </>
+            )}
           </InteractiveSvgWrapper>
           <InformationWrapper>
             <ButtonGroup
