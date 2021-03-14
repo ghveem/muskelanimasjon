@@ -9,12 +9,15 @@ const Button = styled.button`
   font-weight: bold;
   margin-top: 2.5rem;
   margin-left: 0.5rem;
-  margin-right: 1.5rem;
+  font-size: 1rem;
   padding: 0.2rem;
   text-align: left;
   border-bottom: ${(props) => (props.active ? '4px solid #20588F' : 'none')};
   color: ${(props) => (props.active ? '#20588F' : 'none')};
   margin-bottom: ${(props) => (props.active ? 'none' : '4px')};
+  @media only screen and (min-width: 1920px) {
+    font-size: 0.8rem;
+  }
   &:hover {
     border-bottom: 4px solid #20588f;
     margin-bottom: 0;

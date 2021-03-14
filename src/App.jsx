@@ -21,11 +21,10 @@ const MuscleGroupsWrapper = styled.article`
   padding: 1rem;
   background-color: white;
   max-width: ${(props) => (props.isFullscreen ? '1920px' : 'auto')};
-  margin-left: ${(props) => (props.isFullscreen ? '10vw' : '0')};
   @media only screen and (min-width: 1920px) {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
+    align-items: ${(props) => (props.isFullscreen ? 'center' : 'auto')};
   }
 `;
 
@@ -88,6 +87,7 @@ const ContentWrapper = styled.div`
 
 const InteractiveSvgWrapper = styled.div`
   display: flex;
+  align-items: baseline;
   flex: 1;
   margin-right: 1.4rem;
   @media only screen and (max-width: 800px) {
@@ -189,9 +189,11 @@ const App = () => {
           </Button>
         </HeaderWrapper>
 
-        <ContentWrapper>
+        <ContentWrapper isFullscreen={isFullscreen}>
           <InteractiveSvgWrapper>
             <StyledMuscleperson
+              type="image/svg+xml"
+              data={MusclePerson}
               onClick={handleSvgOnClick}
               active={activeGroup}
             />
@@ -221,7 +223,7 @@ const App = () => {
               }
             />
             <MuscleInfo
-              info={activeMuscle.info}
+              activeMuscle={activeMuscle}
               isFullscreen={isFullscreen}
               isMobile={mobile}
             />
