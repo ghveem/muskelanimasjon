@@ -21,7 +21,7 @@ const MuscleGroupsWrapper = styled.article`
   padding: 1rem;
   background-color: white;
   max-width: ${(props) => (props.isFullscreen ? '1920px' : '100%')};
-  @media only screen and (min-width: 1920px) {
+  @media only screen and (min-width: 1921px) {
     display: flex;
     flex-direction: column;
     align-items: ${(props) => (props.isFullscreen ? 'center' : 'auto')};
