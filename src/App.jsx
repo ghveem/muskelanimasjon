@@ -20,7 +20,7 @@ const MuscleGroupsWrapper = styled.article`
   height: auto;
   padding: 1rem;
   background-color: white;
-  max-width: ${(props) => (props.isFullscreen ? '1920px' : 'auto')};
+  max-width: ${(props) => (props.isFullscreen ? '1920px' : '100%')};
   @media only screen and (min-width: 1920px) {
     display: flex;
     flex-direction: column;
@@ -102,9 +102,6 @@ const InformationWrapper = styled.div`
 `;
 
 const StyledMuscleperson = styled(MusclePerson)`
-  height: ${(props) => (props.safariAgent ? '800px' : 'auto')};
-  width: ${(props) => (props.safariAgent ? '800px' : 'auto')};
-
   & > g#muskelpersonv3 > g#muskelperson > g,
   > g#muskelpersonv3
     > g#MaskGroup
@@ -143,18 +140,6 @@ const App = () => {
   const { newNorwegianLanguage, setNewNorwegianLanguage } = useContext(
     languageContext,
   );
-
-  // Get the user-agent string
-  let userAgentString = navigator.userAgent;
-
-  // Detect Chrome
-  let chromeAgent = userAgentString.indexOf('Chrome') > -1;
-
-  // Detect Safari
-  let safariAgent = userAgentString.indexOf('Safari') > -1;
-
-  // Discard Safar since it also matches Chrome
-  if (chromeAgent && safariAgent) safariAgent = false;
 
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('triceps');
@@ -204,21 +189,9 @@ const App = () => {
         <ContentWrapper isFullscreen={isFullscreen}>
           <InteractiveSvgWrapper>
             <StyledMuscleperson
-              safariAgent={safariAgent}
               onClick={handleSvgOnClick}
               active={activeGroup}
             />
-            {safariAgent && (
-              <>
-                <iframe title="MusclePerson" src={MusclePerson}></iframe>
-                <embed src={MusclePerson} type="image/svg+xml"></embed>
-                <object
-                  aria-label="Muskelperson"
-                  data={MusclePerson}
-                  type="image/svg+xml"
-                ></object>
-              </>
-            )}
           </InteractiveSvgWrapper>
           <InformationWrapper>
             <ButtonGroup
