@@ -111,10 +111,14 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Arms.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
+            ({muscle.name1 && muscle.name1.replace(/-/g, ' ')})
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 && <>({muscle.name2.replace(/-/g, ' ')})</>}
           </Header>
         );
       })}
@@ -122,10 +126,18 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Shoulder.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ').replace(' bak', '')})
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
+            (
+            {muscle.name1 &&
+              muscle.name1.replace(/-/g, ' ').replace(' bak', '')}
+            )
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 &&
+              `(${muscle.name2.replace(/-/g, ' ').replace(' bak', '')})`}
           </Header>
         );
       })}
@@ -133,10 +145,16 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Back.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
+            ({muscle.name1 && muscle.name1.replace(/-/g, ' ').replace(/1/g, '')}
+            )
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 &&
+              `(${muscle.name2.replace(/-/g, ' ').replace(' bak', '')})`}
           </Header>
         );
       })}
@@ -144,10 +162,14 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Chest.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ')})
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
+            ({muscle.name1 && muscle.name1.replace(/-/g, ' ')})
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 && `(${muscle.name2.replace(/-/g, ' ')})`}
           </Header>
         );
       })}
@@ -155,17 +177,28 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Stomach.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
             (
-            {muscle.name
-              .toLowerCase()
-              .replace(/-/g, ' ')
-              .replace(/1 /g, '/')
-              .replace(/1/g, '/')
-              .replace(' click', '')}
+            {muscle.name1 &&
+              muscle.name1
+                .toLowerCase()
+                .replace(/-/g, ' ')
+                .replace('1', '/')
+                .replace(/3 /g, ', ')
+                .replace(' click', '')}
             )
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 &&
+              `(${muscle.name2
+                .toLowerCase()
+                .replace(/-/g, ' ')
+                .replace('1', '/')
+                .replace(/3 /g, ', ')
+                .replace(' click', '')})`}
           </Header>
         );
       })}
@@ -173,10 +206,17 @@ const MuscleSelector = ({ index, allMuscleGroups, setActiveMuscle }) => {
       {Legs.map((muscle, key) => {
         return (
           <Header key={key} value={muscle.id}>
-            {newNorwegianLanguage && muscle.newNorwegianName
-              ? muscle.newNorwegianName
-              : muscle.norwegianName}{' '}
-            ({muscle.name.replace(/-/g, ' ').replace(/2/g, ',')})
+            {newNorwegianLanguage && muscle.newNorwegianName1
+              ? muscle.newNorwegianName1
+              : muscle.norwegianName1}{' '}
+            (
+            {muscle.name1 && muscle.name1.replace(/-/g, ' ').replace(/2/g, ',')}
+            )
+            {newNorwegianLanguage && muscle.newNorwegianName2
+              ? muscle.newNorwegianName2
+              : muscle.norwegianName2}{' '}
+            {muscle.name2 &&
+              `(${muscle.name2.replace(/-/g, ' ').replace(/2/g, ',')})`}
           </Header>
         );
       })}

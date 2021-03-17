@@ -1,7 +1,7 @@
 const MuscleGroupsInfo = [{
-    name: 'triceps',
-    norwegianName: 'Trehodet armstrekker',
-    newNorwegianName: 'Trehovda armstrekkar',
+    name1: 'triceps',
+    norwegianName1: 'Trehodet armstrekker',
+    newNorwegianName1: 'Trehovda armstrekkar',
     id: 1,
     muscleGroup: 'Armer',
     info: 'Hovedfunksjonen til muskelen: 1. Strekke albueleddet. 2. Føre armen bakover.',
@@ -25,17 +25,18 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924648001',
     }]
   },{
-    name: 'biceps-og-brachialis',
-    norwegianName: 'Tohodet armbøyer og dype armbøyemuskelen',
-    newNorwegianName: 'Tohovda armbøyar og djupe armbøyemuskel',
+    name1: 'biceps',
+    norwegianName1: 'Tohodet armbøyer',
+    newNorwegianName1: 'Tohovda armbøyar',
     id: 2,
     muscleGroup: 'Armer',
     info: 'Hovedfunksjonen til muskelen: Bøye albueleddet.',
     newNorwegianInfo: 'Hovedfunksjonen til muskelen: Bøye albogeleddet.',
     excersises: [{
-      name: 'Kroppsheving',
+      name: 'Kroppsheving med strikk',
       id: 4,
-      iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260472001'
+      iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228260472001',
+      newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924650001',
     },{
       name: 'Sittende roing med strikk',
       newNorwegianName: 'Sitjande roing med strikk',
@@ -56,8 +57,8 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924264001',
     }]
   },{
-    name: 'deltoideus',
-    norwegianName: 'Framre og midtre del av deltamuskelen',
+    name1: 'deltoideus',
+    norwegianName1: 'Framre og midtre del av deltamuskelen',
     id: 3,
     muscleGroup: 'Skulder',
     info: 'Hovedfunksjonen til muskelen: 1. Føre armen fram. 2. Føre armen ut fra kroppen.',
@@ -80,8 +81,8 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237923162001',
     }]
   },{
-    name: 'deltoideus-bak',
-    norwegianName: 'Bakre del av deltamuskelen',
+    name1: 'deltoideus-bak',
+    norwegianName1: 'Bakre del av deltamuskelen',
     id: 4,
     muscleGroup: 'Skulder',
     info: 'Hovedfunksjonen til muskelen: Føre armen bakover.',
@@ -110,8 +111,8 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924264001',
     }]
   },{
-    name: 'trapezius',
-    norwegianName: 'Øvre del av kappemuskel',
+    name1: 'trapezius1',
+    norwegianName1: 'Øvre del av kappemuskel',
     id: 5,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: Heve skuldrene.',
@@ -134,8 +135,10 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237923163001',
     }]
   },{
-    name: 'trapezius-og-rhomboideus',
-    norwegianName: 'Midtre del av kappemuskel og rombemuskel',
+    name1: 'trapezius',
+    name2: 'rhomboideus',
+    norwegianName1: 'Midtre del av kappemuskel ',
+    norwegianName2: ' og rombemuskel',
     id: 6,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: Trekke skulderbladene sammen.',
@@ -176,11 +179,11 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921456001',
     }]
   },{
-    name: 'pectoralis-major',
-    norwegianName: 'Store brystmuskel',
+    name1: 'pectoralis-major',
+    norwegianName1: 'Store brystmuskel',
     id: 7,
     muscleGroup: 'Bryst',
-    info: 'Hovedfunksjonen til muskelen: 1. Fører armen fram og inn. 2. Føre armen bakover (nedre del av muskelen).',
+    info: 'Hovedfunksjonen til muskelen: 1. Føre armen fram og inn. 2. Føre armen bakover (nedre del av muskelen).',
     excersises: [{
       name: 'Armhevinger',
       newNorwegianName: 'Armhevingar',
@@ -195,9 +198,12 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924267001',
     }]
   },{
-    name: 'latissimus-dorsi-og-teres-major',
-    norwegianName: 'Brede ryggmuskel og store runde akselmuskel',
-    newNorwegianName: 'Breie ryggmuskel og store runde akselmuskel',
+    name1: 'latissimus-dorsi',
+    name2: 'teres-major',
+    norwegianName1: 'Brede ryggmuskel ',
+    norwegianName2: ' og store runde akselmuskel',
+    newNorwegianName1: 'Breie ryggmuskel ',
+    newNorwegianName2: ' og store runde akselmuskel',
     id: 8,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: 1. Føre armen bakover. 2. Føre armen innover mot kroppen.',
@@ -237,8 +243,10 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921456001',
     }]
   },{
-    name: 'rectus-abdominis-og-obliqus-internus1eksternus-abdominis',
-    norwegianName: 'Rette magemuskel og skrå magemuskel',
+    name1: 'rectus-abdominis',
+    name2:'obliqus-internus1eksternus-abdominis',
+    norwegianName1: 'Rette magemuskel ',
+    norwegianName2: ' og skrå magemuskel',
     id: 9,
     muscleGroup: 'Mage',
     info: 'Hovedfunksjonen til muskelen: Bøye ryggsøyla.',
@@ -265,21 +273,21 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924268001',
     }]
   },{
-    name: 'transversus-abdominis-click',
-    norwegianName: 'Magens tverrmuskel',
+    name1: 'transversus-abdominis-click',
+    norwegianName1: 'Magens tverrmuskel',
     id: 10,
     muscleGroup: 'Mage',
     info: 'Hovedfunksjonen til muskelen: Lage buktrykk og stabilisere ryggsøyla.',
     excersises: [{
       name: 'Buktrykk',
       id: 36,
-      iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256697001',
+      iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256369001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919562001',
     }]
   },{
-    name: 'erector-spinae',
-    norwegianName: 'Lange ryggstrekker',
-    newNorwegianName: 'Lange ryggstrekkar',
+    name1: 'erector-spinae',
+    norwegianName1: 'Lange ryggstrekker',
+    newNorwegianName1: 'Lange ryggstrekkar',
     id: 11,
     muscleGroup: 'Rygg',
     info: 'Hovedfunksjonen til muskelen: Strekke ryggsøyla.',
@@ -314,9 +322,9 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921782001',
     }]
   },{
-    name: 'gluteus-medius2-gluteus-minimus2-tensor-facia-latae',
-    norwegianName: 'Hoftas utoverførere',
-    newNorwegianName: 'Hofta sine utoverførarar',
+    name1: 'gluteus-medius2-gluteus-minimus2-tensor-facia-latae',
+    norwegianName1: 'Hoftas utoverførere',
+    newNorwegianName1: 'Hofta sine utoverførarar',
     id: 12,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Føre beinet utover fra kroppen og stabilisere beinet.',
@@ -334,9 +342,9 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924355001',
     }]
   },{
-    name: 'ilipsoas1-rectus-femoris',
-    norwegianName: 'Hofteleddsbøyer',
-    newNorwegianName: 'Hofteleddsbøyar',
+    name1: 'iliopsoas3-rectus-femoris',
+    norwegianName1: 'Hofteleddsbøyer',
+    newNorwegianName1: 'Hofteleddsbøyar',
     id: 13,
     muscleGroup: 'Mage',
     info: 'Hovedfunksjonen til muskelen: Bøye i hofteleddet, f.eks føre beinet fram.',
@@ -348,8 +356,8 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924072001',
     }]
   },{
-    name: 'gluteus-maximus',
-    norwegianName: 'Store setemuskel',
+    name1: 'gluteus-maximus',
+    norwegianName1: 'Store setemuskel',
     id: 14,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Strekke i hofteleddet, f.eks ved å føre beinet bakover.',
@@ -393,9 +401,9 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919560001',
     }]
   },{
-    name: 'adductor-magnus',
-    norwegianName: 'Hoftas innoverførere',
-    newNorwegianName: 'Hofta sine innoverførarar',
+    name1: 'adductor-magnus',
+    norwegianName1: 'Hoftas innoverførere',
+    newNorwegianName1: 'Hofta sine innoverførarar',
     id: 15,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: 1. Føre beinet innover mot kroppen. 2. Strekke i hofteleddet.',
@@ -424,13 +432,13 @@ const MuscleGroupsInfo = [{
     },{
       name: 'Splittknebøy',
       id: 56,
-      iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228257652001',
+      iframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924071001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919560001',
     }]
   },{
-    name: 'quadriceps',
-    norwegianName: 'Firehodet knestrekker',
-    newNorwegianName: 'Firehovda knestrekkar',
+    name1: 'quadriceps',
+    norwegianName1: 'Firehodet knestrekker',
+    newNorwegianName1: 'Firehovda knestrekkar',
     id: 16,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Strekke i kneleddet.',
@@ -463,9 +471,9 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919560001',
     }]
   },{
-    name: 'hamstring',
-    norwegianName: 'Tohodet knebøyer',
-    newNorwegianName: 'Tohovda knebøyar',
+    name1: 'hamstring',
+    norwegianName1: 'Tohodet knebøyer',
+    newNorwegianName1: 'Tohovda knebøyar',
     id: 17,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: 1. Strekke i hofteleddet, f.eks ved å føre beinet bakover. 2. Bøye i kneleddet.',
@@ -498,9 +506,9 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921455001',
     }]
   },{
-    name: 'gastrocnemius-og-soleus',
-    norwegianName: 'Ankelstrekkere',
-    newNorwegianName: 'Ankelstrekkarar',
+    name1: 'gastrocnemius-og-soleus',
+    norwegianName1: 'Ankelstrekkere',
+    newNorwegianName1: 'Ankelstrekkarar',
     id: 18,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjon til muskelen: Strekke i ankelleddet.',
@@ -512,8 +520,8 @@ const MuscleGroupsInfo = [{
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237920773001',
     }]
   },{
-    name: 'tibialis-anterior',
-    norwegianName: 'Fremre skinnebeinsmuskel',
+    name1: 'tibialis-anterior',
+    norwegianName1: 'Fremre skinnebeinsmuskel',
     id: 19,
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Bøye i ankelleddet, f.eks ved å løfte tærne.',
@@ -538,6 +546,6 @@ const MuscleGroupsInfo = [{
   
   export const getMuscleGroupByName = (name) => {
     return(
-      MuscleGroupsInfo.find((m) => m.name === name)
+      MuscleGroupsInfo.find((m) => m.name1 === name)
     )
   }
