@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { useState, useEffect, useContext } from 'react';
 import styled from '@emotion/styled';
 import MuscleSelector from './MuscleSelector';
@@ -20,11 +21,12 @@ const MuscleGroupsWrapper = styled.article`
   height: auto;
   padding: 1rem;
   background-color: white;
-  max-width: ${(props) => (props.isFullscreen ? '2560px' : '100%')};
-  @media only screen and (min-width: 2560px) {
+  max-width: ${(props) => (props.width > 2561 ? '2560px' : '100%')};
+  @media only screen and (min-width: 2561px) {
     display: flex;
     flex-direction: column;
     align-items: ${(props) => (props.isFullscreen ? 'center' : 'auto')};
+    justify-content: ${(props) => (props.isFullscreen ? 'center' : 'auto')};
   }
 `;
 
@@ -141,6 +143,9 @@ const App = () => {
     languageContext,
   );
 
+  const width = screen.width;
+  const height = screen.height;
+
   const [activeMuscleId, setActiveMuscleId] = useState(1);
   const [activeGroup, setActiveGroup] = useState('triceps');
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -174,7 +179,12 @@ const App = () => {
   };
   return (
     <Wrapper>
-      <MuscleGroupsWrapper id="app" isFullscreen={isFullscreen}>
+      <MuscleGroupsWrapper
+        id="app"
+        isFullscreen={isFullscreen}
+        width={width}
+        height={height}
+      >
         <HeaderWrapper>
           <Header>
             {!newNorwegianLanguage

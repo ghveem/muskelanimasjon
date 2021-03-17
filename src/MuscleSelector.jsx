@@ -11,15 +11,14 @@ const MuscleSelectorWrapper = styled.select`
   border-bottom: 1px solid #20588f;
   margin-top: 1rem;
   cursor: pointer;
-  padding: 0.7rem;
+  padding: 0;
   white-space: unset;
   color: #20588f;
   font-size: 1.5rem;
   font-weight: bold;
-  padding-left: 0;
   word-wrap: break-word;
-  height: 5.2rem;
-  @media only screen and (max-width: 800px) {
+  height: 6rem;
+  @media only screen and (max-width: 1022px) {
     font-size: 1rem;
   }
   @media only screen and (max-width: 374px) {
