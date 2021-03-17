@@ -20,8 +20,8 @@ const MuscleGroupsWrapper = styled.article`
   height: auto;
   padding: 1rem;
   background-color: white;
-  max-width: ${(props) => (props.isFullscreen ? '1920px' : '100%')};
-  @media only screen and (min-width: 1921px) {
+  max-width: ${(props) => (props.isFullscreen ? '2560px' : '100%')};
+  @media only screen and (min-width: 2560px) {
     display: flex;
     flex-direction: column;
     align-items: ${(props) => (props.isFullscreen ? 'center' : 'auto')};
@@ -152,7 +152,7 @@ const App = () => {
 
   useEffect(() => {
     getMuscleGroup(activeMuscleId);
-    setActiveGroup(activeMuscle.name);
+    setActiveGroup(activeMuscle.name1);
   }, [activeMuscleId, activeMuscle]);
 
   const handleLanguageChanged = () => {
@@ -169,7 +169,7 @@ const App = () => {
     const activeMuscleGroup = getMuscleGroupByName(e.target.parentElement.id);
     if (activeMuscleGroup) {
       setActiveMuscleId(activeMuscleGroup.id);
-      setActiveGroup(activeMuscleGroup.name);
+      setActiveGroup(activeMuscleGroup.name1);
     }
   };
   return (

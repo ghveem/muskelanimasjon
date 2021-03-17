@@ -127,6 +127,8 @@ const ButtonGroup = ({
     if (!isFullscreen) {
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
+      } else if (elem.requestFullScreen) {
+        elem.requestFullScreen();
       } else if (elem.mozRequestFullScreen) {
         /* Firefox */
         elem.mozRequestFullScreen();
