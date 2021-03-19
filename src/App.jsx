@@ -14,7 +14,7 @@ import { ReactComponent as MusclePerson } from './svg/muskelpersonv5.svg';
 import useIsMobile from './utils/useIsMobile.js';
 import { languageContext } from './utils/context';
 
-const MuscleGroupsWrapper = styled.article`
+const MuscleGroupsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -30,7 +30,7 @@ const MuscleGroupsWrapper = styled.article`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,6 +143,13 @@ const App = () => {
     languageContext,
   );
 
+  // Safari 3.0+ "[object HTMLElementConstructor]"
+  const isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    })(!window['safari'] || typeof safari !== 'undefined');
+
   const width = screen.width;
   const height = screen.height;
 
@@ -219,6 +226,7 @@ const App = () => {
                 setIsFullscreenFromButton(newIsFullscreenButtonPressed)
               }
               isFullscreenFromButton={isFullscreenFromButton}
+              isSafari={isSafari}
             />
             <MuscleSelector
               index={activeMuscle.id}
