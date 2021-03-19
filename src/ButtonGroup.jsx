@@ -191,11 +191,13 @@ const ButtonGroup = ({
 
   return (
     <>
-      {!isMobile && !isSafari && (
+      {!isMobile && (
         <ButtonWrapper>
-          <FullscreenButton onClick={handleFullscreenOnClick}>
-            {isFullscreen ? 'Lukk fullskjerm' : 'Fullskjerm'}
-          </FullscreenButton>
+          {!isSafari && (
+            <FullscreenButton onClick={handleFullscreenOnClick}>
+              {isFullscreen ? 'Lukk fullskjerm' : 'Fullskjerm'}
+            </FullscreenButton>
+          )}
           <Text>
             {index}/{length}
           </Text>
