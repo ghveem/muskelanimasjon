@@ -244,7 +244,7 @@ const MuscleGroupsInfo = [{
     }]
   },{
     name1: 'rectus-abdominis',
-    name2:'obliqus-internus1eksternus-abdominis',
+    name2:'obliquus-internus1eksternus-abdominis',
     norwegianName1: 'Rette magemuskel ',
     norwegianName2: ' og skrå magemuskel',
     id: 9,
