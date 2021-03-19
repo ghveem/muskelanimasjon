@@ -144,7 +144,7 @@ const App = () => {
   );
 
   // Safari 3.0+ "[object HTMLElementConstructor]"
-  var isSafari =
+  const isSafari =
     /constructor/i.test(window.HTMLElement) ||
     (function (p) {
       return p.toString() === '[object SafariRemoteNotification]';
