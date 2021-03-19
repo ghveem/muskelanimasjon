@@ -188,7 +188,7 @@ const ButtonGroup = ({
     setIsFullscreenFromButton,
     isFullscreenFromButton,
   ]);
-
+  console.log('issafar', isSafari);
   return (
     <>
       {!isMobile && (

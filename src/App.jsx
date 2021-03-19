@@ -142,13 +142,21 @@ const App = () => {
   const { newNorwegianLanguage, setNewNorwegianLanguage } = useContext(
     languageContext,
   );
+  const [safari, setSafari] = useState(false);
 
-  // Safari 3.0+ "[object HTMLElementConstructor]"
-  const isSafari =
-    /constructor/i.test(window.HTMLElement) ||
-    (function (p) {
-      return p.toString() === '[object SafariRemoteNotification]';
-    })(!window['safari'] || typeof safari !== 'undefined');
+  const isSafari = () => {
+    if (
+      navigator.userAgent.indexOf('Safari') !== -1 &&
+      !(navigator.userAgent.indexOf('Chrome') !== -1)
+    ) {
+      return setSafari(true);
+    } else {
+      return setSafari(false);
+    }
+  };
+  useEffect(() => {
+    isSafari();
+  }, []);
 
   const width = screen.width;
   const height = screen.height;
@@ -226,7 +234,7 @@ const App = () => {
                 setIsFullscreenFromButton(newIsFullscreenButtonPressed)
               }
               isFullscreenFromButton={isFullscreenFromButton}
-              isSafari={isSafari}
+              isSafari={safari}
             />
             <MuscleSelector
               index={activeMuscle.id}
