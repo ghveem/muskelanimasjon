@@ -120,6 +120,7 @@ const ButtonGroup = ({
   isMobile,
   setIsFullscreenFromButton,
   isFullscreenFromButton,
+  isSafari,
 }) => {
   const handleFullscreenOnClick = () => {
     setIsFullscreenFromButton(true);
@@ -190,7 +191,7 @@ const ButtonGroup = ({
 
   return (
     <>
-      {!isMobile && (
+      {!isMobile && !isSafari && (
         <ButtonWrapper>
           <FullscreenButton onClick={handleFullscreenOnClick}>
             {isFullscreen ? 'Lukk fullskjerm' : 'Fullskjerm'}
