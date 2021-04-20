@@ -256,8 +256,8 @@ const MuscleGroupsInfo = [{
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6228256697001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237921781001',
     },{
-      name: 'Beinløft med bøyde knær / Beinløft med strake bein (kommer snart)',
-      newNorwegianName: 'Beinløft med bøygde knær / beinløft med strake bein (kjem snart)',
+      name: 'Beinhev med bøyde knær / beinhev med strake bein',
+      newNorwegianName: 'Beinhev med bøygde kne / beinhev med strake bein',
       id: 33,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924265001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924072001',
@@ -513,8 +513,8 @@ const MuscleGroupsInfo = [{
     muscleGroup: 'Bein',
     info: 'Hovedfunksjon til muskelen: Strekke i ankelleddet.',
     excersises: [{
-      name: 'Tåhev (kommer snart)',
-      newNorwegianName: 'Tåhev (kjem snart)',
+      name: 'Tåhev',
+      newNorwegianName: 'Tåhev',
       id: 67,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924352001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237920773001',
@@ -526,8 +526,8 @@ const MuscleGroupsInfo = [{
     muscleGroup: 'Bein',
     info: 'Hovedfunksjonen til muskelen: Bøye i ankelleddet, f.eks ved å løfte tærne.',
     excersises: [{
-      name: 'Tåstrekk (kommer snart)',
-      newNorwegianName: 'Tåstrekk (kjem snart)',
+      name: 'Tåløft',
+      newNorwegianName: 'Tåløft',
       id: 68,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237919561001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924353001',
