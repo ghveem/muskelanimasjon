@@ -349,8 +349,8 @@ const MuscleGroupsInfo = [{
     muscleGroup: 'Mage',
     info: 'Hovedfunksjonen til muskelen: Bøye i hofteleddet, f.eks føre beinet fram.',
     excersises: [{
-      name: 'Beinløft med bøyde knær / Beinløft med strake bein (kommer snart)',
-      newNorwegianName: 'Beinløft med bøygde kne / beinløft med strake bein (kjem snart)',
+      name: 'Beinhev med bøyde knær / beinhev med strake bein',
+      newNorwegianName: 'Beinhev med bøygde kne / beinhev med strake bein',
       id: 44,
       iframeSrc:'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924265001',
       newNorwegianIframeSrc: 'https://players.brightcove.net/4806596774001/BkLm8fT_default/index.html?videoId=6237924072001',
