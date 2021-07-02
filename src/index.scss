@@ -1,7 +1,11 @@
 body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Fix for scrolling i H5P iframe
+  overflow-y: scroll;
+  height: 100vh !important;
 }
 
 @import '~@ndla/core/scss/core';
