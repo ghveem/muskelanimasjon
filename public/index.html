@@ -48,14 +48,21 @@
     <link rel="alternate" hreflang="nb" href="https://statisk.ndla.no/muskelanimasjon/">
     <link rel="alternate" hreflang="nn" href="https://statisk.ndla.no/muskelanimasjon/">
     <link rel="shortcut icon" href="https://ndla.no/static/ndla-favicon.png" type="image/x-icon">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7W6XF0WSR"></script>
+<!-- Matomo -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H7W6XF0WSR');
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://tall.ndla.no/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '10']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
+<!-- End Matomo Code -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
